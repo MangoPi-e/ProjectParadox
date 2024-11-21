@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://csa6meogwx54p"]
+[gd_scene load_steps=3 format=3 uid="uid://csa6meogwx54p"]
+
+[ext_resource type="Texture2D" uid="uid://vdifuc5tu7xk" path="res://GameElements/icon.svg" id="1_0mow4"]
+[ext_resource type="PackedScene" uid="uid://ckfanohmqqjvk" path="res://GameElements/Assets/Player/Player.tscn" id="2_mo7cx"]
 
 [node name="Phase0" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(455.5, -173.5)
+scale = Vector2(18.1016, 5.50781)
+texture = ExtResource("1_0mow4")
+
+[node name="Player" parent="." instance=ExtResource("2_mo7cx")]
+position = Vector2(319, 605)

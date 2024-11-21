@@ -1,24 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckfanohmqqjvk"]
+[gd_scene load_steps=8 format=3 uid="uid://ckfanohmqqjvk"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/Player/Scripts/Player.gd" id="1_pqca4"]
 [ext_resource type="Script" path="res://GameElements/Assets/Player/Scripts/state_machine.gd" id="2_5kfkb"]
 [ext_resource type="Script" path="res://GameElements/Assets/Player/Scripts/idel.gd" id="3_n2txl"]
 [ext_resource type="Script" path="res://GameElements/Assets/Player/Scripts/Movement.gd" id="4_wdjv7"]
+[ext_resource type="Texture2D" uid="uid://vdifuc5tu7xk" path="res://GameElements/icon.svg" id="5_12yc8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umlxi"]
+size = Vector2(121, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_68rni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_12yc8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_pqca4")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_umlxi")
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("StartingState")]
 script = ExtResource("2_5kfkb")
+StartingState = NodePath("Idel")
 
-[node name="Idel" type="Node" parent="StateMachine"]
+[node name="Idel" type="Node" parent="StateMachine" node_paths=PackedStringArray("MoveState")]
 script = ExtResource("3_n2txl")
+MoveState = NodePath("../Movement")
+AnimationName = "default"
 
-[node name="Movement" type="Node" parent="StateMachine"]
+[node name="Movement" type="Node" parent="StateMachine" node_paths=PackedStringArray("IdelState")]
 script = ExtResource("4_wdjv7")
+IdelState = NodePath("../Idel")
+AnimationName = "default"
 
 [node name="Visuals" type="Node" parent="."]
 
-[node name="PlayerAnimManager" type="AnimatedSprite2D" parent="Visuals"]
+[node name="PlayerAnimManager" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_68rni")
