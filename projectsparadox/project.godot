@@ -12,4 +12,9 @@ config_version=5
 
 config/name="ProjectsParadox"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://GameElements/icon.svg"
+
+[autoload]
+
+Global="*res://GameElements/Global.gd"
+SoundManager="*res://GameElements/SoundManager.gd"
