@@ -14,5 +14,5 @@ func process_input(_event) -> State:
 	return null
 	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

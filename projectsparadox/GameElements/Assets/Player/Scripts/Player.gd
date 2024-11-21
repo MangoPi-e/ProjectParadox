@@ -1,16 +1,15 @@
 class_name Player
 extends CharacterBody2D
 
-@onready
-var Anim = $PlayerAnimManager
-@onready
-var StateMachine = $StateMachine
+@onready var Anim = $PlayerAnimManager
+@onready var StateMachine = $StateMachine
+
 var MovementDir = Vector2.ZERO
 
 var ObjectsInRange: Array = []
 
-@export
-var Enabled: bool = true
+@export var Enabled: bool = true
+
 
 func _ready():
 	Global.PlayerObject = self

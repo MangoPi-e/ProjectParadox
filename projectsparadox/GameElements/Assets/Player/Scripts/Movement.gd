@@ -3,9 +3,8 @@ extends State
 
 @export
 var IdelState: State
-@export
-var RunSpeed: float = 100.0
-var MomnSpeed: float = MovementSpeed
+var RunSpeed: float
+var NormalSpeed: float
 var MovementDir
 var Sign = 1
 
@@ -17,14 +16,14 @@ func enter() -> void:
 
 func process_physics(delta) -> State:
 	if Input.is_action_pressed("Rush"):
-		MomnSpeed = RunSpeed
+		NormalSpeed = RunSpeed
 	else:
-		MomnSpeed = MovementSpeed
+		NormalSpeed = MovementSpeed
 	MovementDir = Parent.MovementDir
 	if sign(MovementDir.x) == -Sign:
 		Parent.scale.x *= -1
 		Sign *= -1
-	Parent.handle_movement(delta, MomnSpeed)
+	Parent.handle_movement(delta, NormalSpeed)
 	
 	if Input.is_action_just_pressed("Interact"):
 		Parent.ObjectsInRange[0].player_says_work()
