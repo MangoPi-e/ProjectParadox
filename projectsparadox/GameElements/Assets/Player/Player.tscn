@@ -1,6 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckfanohmqqjvk"]
+[gd_scene load_steps=5 format=3 uid="uid://ckfanohmqqjvk"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/Player/Scripts/Player.gd" id="1_pqca4"]
+[ext_resource type="Script" path="res://GameElements/Assets/Player/Scripts/state_machine.gd" id="2_5kfkb"]
+[ext_resource type="Script" path="res://GameElements/Assets/Player/Scripts/idel.gd" id="3_n2txl"]
+[ext_resource type="Script" path="res://GameElements/Assets/Player/Scripts/Movement.gd" id="4_wdjv7"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_pqca4")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_5kfkb")
+
+[node name="Idel" type="Node" parent="StateMachine"]
+script = ExtResource("3_n2txl")
+
+[node name="Movement" type="Node" parent="StateMachine"]
+script = ExtResource("4_wdjv7")
+
+[node name="Visuals" type="Node" parent="."]
+
+[node name="PlayerAnimManager" type="AnimatedSprite2D" parent="Visuals"]
