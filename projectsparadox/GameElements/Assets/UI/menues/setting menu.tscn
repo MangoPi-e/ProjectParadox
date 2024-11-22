@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bup8wy5x8r1uk"]
+[gd_scene load_steps=12 format=3 uid="uid://bup8wy5x8r1uk"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/SettingsMenu.gd" id="1_8ihlk"]
 [ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_ml60o"]
@@ -12,6 +12,21 @@
 texture = ExtResource("1_ml60o")
 
 [sub_resource type="Theme" id="Theme_s7h8w"]
+
+[sub_resource type="FontVariation" id="FontVariation_qys3p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knrba"]
+bg_color = Color(0.18359, 0.18359, 0.18359, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 7
 
 [node name="SettingMenu" type="Control"]
 layout_mode = 3
@@ -138,5 +153,24 @@ vertical_alignment = 1
 stream = ExtResource("5_jxdtu")
 volume_db = -20.0
 autoplay = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.382
+anchor_top = 0.741
+anchor_right = 0.604
+anchor_bottom = 0.84
+offset_left = -0.0640259
+offset_top = -0.16803
+offset_right = 0.191956
+offset_bottom = 4.67999
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("FontVariation_qys3p")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_knrba")
+text = "الخروج"
 
 [connection signal="item_selected" from="VBoxContainer/OptionButton" to="VBoxContainer/OptionButton" method="_on_item_selected"]
