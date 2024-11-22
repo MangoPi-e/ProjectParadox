@@ -2,10 +2,7 @@
 
 [ext_resource type="Script" path="res://note.gd" id="1_kf8w3"]
 
-[node name="Note" type="Button"]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Note"
+[node name="Note" type="Node2D"]
 script = ExtResource("1_kf8w3")
-
-[connection signal="button_down" from="." to="." method="_on_button_down"]
+Keys = null
+Enabled = null

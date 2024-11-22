@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://csa6meogwx54p"]
+[gd_scene load_steps=11 format=3 uid="uid://csa6meogwx54p"]
 
 [ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="1_3p0n3"]
 [ext_resource type="Texture2D" uid="uid://ctlsgj5g5snql" path="res://GameElements/Assets/LevelMaking ART/World/lab_tileset_LITE/lab_tileset_LITE.png" id="2_arll6"]
 [ext_resource type="PackedScene" uid="uid://ckfanohmqqjvk" path="res://GameElements/Assets/Player/Player.tscn" id="2_mo7cx"]
 [ext_resource type="PackedScene" uid="uid://dw1ogxafjoroa" path="res://GameElements/Assets/Objects/ObjectsProbs/interactive_object.tscn" id="4_x6xsb"]
+[ext_resource type="PackedScene" uid="uid://bkp5fx8vpxt6o" path="res://GameElements/Assets/Objects/ObjectsProbs/key.tscn" id="5_kw1de"]
+[ext_resource type="PackedScene" uid="uid://d1b3deq236v31" path="res://GameElements/Assets/Objects/ObjectsProbs/lock.tscn" id="6_owtf6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8po6j"]
 shader = ExtResource("1_3p0n3")
@@ -341,7 +343,7 @@ tile_set = SubResource("TileSet_yw4p1")
 format = 2
 
 [node name="Player" parent="." instance=ExtResource("2_mo7cx")]
-position = Vector2(-172, 5.99998)
+position = Vector2(200, 61)
 scale = Vector2(0.2, 0.2)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -352,7 +354,7 @@ limit_right = 200
 limit_bottom = 200
 
 [node name="InteractiveObject" parent="." instance=ExtResource("4_x6xsb")]
-position = Vector2(204, 0)
+position = Vector2(-5.99998, 59)
 scale = Vector2(0.2, 0.2)
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -363,3 +365,11 @@ offset_top = -1041.0
 offset_right = 1867.0
 offset_bottom = 928.0
 rotation = -0.00972625
+
+[node name="Key" parent="." instance=ExtResource("5_kw1de")]
+position = Vector2(83, 68)
+ID = "DemoKey1"
+
+[node name="Lock" parent="." instance=ExtResource("6_owtf6")]
+position = Vector2(135, 86)
+Keys = Array[String](["DemoKey1"])

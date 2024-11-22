@@ -25,7 +25,7 @@ func process_physics(delta) -> State:
 		Sign *= -1
 	Parent.handle_movement(delta, NormalSpeed)
 	
-	if Input.is_action_just_pressed("Interact"):
+	if Input.is_action_just_pressed("Interact") and len(Parent.ObjectsInRange) > 0:
 		Parent.ObjectsInRange[0].player_says_work()
 		MovementDir = Vector2.ZERO
 		
