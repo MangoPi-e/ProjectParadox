@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://csa6meogwx54p"]
+[gd_scene load_steps=6 format=3 uid="uid://csa6meogwx54p"]
 
 [ext_resource type="Texture2D" uid="uid://vdifuc5tu7xk" path="res://GameElements/icon.svg" id="1_0mow4"]
 [ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="1_3p0n3"]
@@ -12,15 +12,29 @@ shader_parameter/shake_speed = 5.0
 shader_parameter/shake_block_size = 30.5
 shader_parameter/shake_color_rate = 0.695
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v0khx"]
+shader = ExtResource("1_3p0n3")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 8.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
 [node name="Phase0" type="Node2D"]
 material = SubResource("ShaderMaterial_8po6j")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(455.5, -173.5)
-scale = Vector2(18.1016, 5.50781)
+scale = Vector2(18.1016, 12.7578)
 texture = ExtResource("1_0mow4")
 
 [node name="Player" parent="." instance=ExtResource("2_mo7cx")]
-position = Vector2(319, 605)
+position = Vector2(-189, 351)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_v0khx")
+offset_left = -1911.0
+offset_top = -996.0
+offset_right = 1929.0
+offset_bottom = 973.0
