@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcb4orknuvou3"]
+
+[ext_resource type="Script" path="res://note.gd" id="1_kf8w3"]
+
+[node name="Note" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Note"
+script = ExtResource("1_kf8w3")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
