@@ -830,7 +830,6 @@ PlayerObj = NodePath("../Player")
 
 [node name="Lock" parent="Node" node_paths=PackedStringArray("EffectedObjects") instance=ExtResource("6_owtf6")]
 position = Vector2(6, -2087)
-scale = Vector2(1, 1)
 Keys = Array[String](["Key0"])
 EffectedObjects = NodePath("EffectedItems")
 
@@ -847,4 +846,3 @@ PlayerObject = NodePath("../../../../Player")
 
 [node name="Key" parent="Node" instance=ExtResource("5_kw1de")]
 position = Vector2(88, -2078)
-scale = Vector2(1, 1)
