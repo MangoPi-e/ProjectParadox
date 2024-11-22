@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c40w1ek820rfy"]
+[gd_scene load_steps=10 format=3 uid="uid://c40w1ek820rfy"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/MainMenu.gd" id="1_cr1lx"]
 [ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_u11hw"]
 [ext_resource type="FontFile" uid="uid://ceoqmhmvf4hx8" path="res://GameElements/Assets/UI/Fonts/bitsy-font-with-arabic.otf" id="2_28bab"]
+[ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="4_yyd6l"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/shake_rect.gd" id="5_fjejj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qea4s"]
 texture = ExtResource("1_u11hw")
@@ -22,6 +24,14 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 shadow_size = 7
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e6vlg"]
+shader = ExtResource("4_yyd6l")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 1.0
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -32,6 +42,7 @@ grow_vertical = 2
 script = ExtResource("1_cr1lx")
 
 [node name="Panel_1" type="Panel" parent="."]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -102,3 +113,18 @@ theme_override_font_sizes/font_size = 46
 text = "Time travel"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ShakeRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_e6vlg")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.001
+anchor_top = -0.003
+anchor_right = 1.0
+anchor_bottom = 0.997
+offset_left = 0.152
+offset_top = -0.056
+offset_right = -1.0
+offset_bottom = -0.0560303
+script = ExtResource("5_fjejj")
