@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dfetnb4kofqpg"]
+
+[ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_7kbvd"]
+
+[resource]
+texture = ExtResource("1_7kbvd")

@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bbigc2dbrsusm"]
+
+[ext_resource type="Texture2D" uid="uid://yl5bawvwmhdu" path="res://GameElements/Assets/UI/menues/backgrounds/hologramboard.png" id="1_pg8i6"]
+
+[resource]
+texture = ExtResource("1_pg8i6")
+modulate_color = Color(0.779291, 0.779291, 0.779291, 1)

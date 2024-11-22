@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://8cant0y01ore"]
+
+[ext_resource type="Texture2D" uid="uid://b1j85oku3omt6" path="res://GameElements/Assets/UI/menues/backgrounds/whiteboard.png" id="1_34gkg"]
+
+[resource]
+texture = ExtResource("1_34gkg")

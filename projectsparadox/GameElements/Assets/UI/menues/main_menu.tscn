@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://c40w1ek820rfy"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/MainMenu.gd" id="1_cr1lx"]
+[ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_u11hw"]
 [ext_resource type="FontFile" uid="uid://ceoqmhmvf4hx8" path="res://GameElements/Assets/UI/Fonts/bitsy-font-with-arabic.otf" id="2_28bab"]
-[ext_resource type="Texture2D" uid="uid://b1j85oku3omt6" path="res://GameElements/Assets/UI/menues/backgrounds/whiteboard.png" id="2_sntf3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qea4s"]
-texture = ExtResource("2_sntf3")
+texture = ExtResource("1_u11hw")
 
 [sub_resource type="FontVariation" id="FontVariation_r26m3"]
 
@@ -90,6 +90,11 @@ offset_top = -2.0
 offset_right = 574.0
 offset_bottom = 124.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0923971, 0.0923971, 0.0923971, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/font = ExtResource("2_28bab")
 theme_override_font_sizes/font_size = 46
 text = "Time travel"
