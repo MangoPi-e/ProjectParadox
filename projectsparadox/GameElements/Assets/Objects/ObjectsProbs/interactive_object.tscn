@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw1ogxafjoroa"]
+
+[ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/interactive_object.gd" id="1_o00ut"]
+[ext_resource type="Texture2D" uid="uid://vdifuc5tu7xk" path="res://GameElements/icon.svg" id="2_ritfg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjsri"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ritfg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="InteractiveObject" type="Node2D"]
+script = ExtResource("1_o00ut")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+
+[node name="InterAnim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qjsri")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
