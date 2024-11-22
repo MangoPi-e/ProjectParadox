@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0l1t2d26jn8u"]
+
+[ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/table.gd" id="1_a8vff"]
+[ext_resource type="Texture2D" uid="uid://vdifuc5tu7xk" path="res://GameElements/icon.svg" id="2_08oj8"]
+[ext_resource type="Script" path="res://GameElements/Assets/Player/Scripts/inventory_entry_sprite.gd" id="3_hi1o2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8sgk4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_08oj8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7w3lb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_08oj8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nwuvi"]
+radius = 50.04
+
+[node name="Table" type="Node2D"]
+script = ExtResource("1_a8vff")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -37)
+scale = Vector2(9, 1.5)
+sprite_frames = SubResource("SpriteFrames_8sgk4")
+
+[node name="InventoryEntry" type="Node2D" parent="."]
+position = Vector2(0, -130)
+script = ExtResource("3_hi1o2")
+
+[node name="InventoryEntrySprite" type="AnimatedSprite2D" parent="InventoryEntry"]
+scale = Vector2(0.753, 0.753)
+sprite_frames = SubResource("SpriteFrames_7w3lb")
+
+[node name="Area2D" type="Area2D" parent="InventoryEntry"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InventoryEntry/Area2D"]
+shape = SubResource("CircleShape2D_nwuvi")

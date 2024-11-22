@@ -1,13 +1,22 @@
 extends Node2D
 class_name Lock
 
+@export_category("Data")
+@export var ID:String = "Lock0"
 @export var Keys:Array[String]
-@export var EffectedObjects:Node
-@export var Enabled:bool = true
 @export var ChangePercent: float = 1.2
+@export_category("Modes")
+@export var Enabled:bool = true
+@export_category("Objects")
+@export var EffectedObjects:Node
+
+@onready var Anim = $AnimSprite
 var ObjectInRange:Key
 var ChangePercentVector: Vector2
+
+
 func _ready() -> void:
+	Anim.play(ID)
 	ChangePercentVector = scale * ChangePercent
 
 func _process(delta: float) -> void:

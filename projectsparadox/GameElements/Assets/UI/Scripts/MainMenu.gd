@@ -19,10 +19,8 @@ func _ready() -> void:
 	timer.start()
 
 	
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		print("....")
 	
@@ -38,7 +36,7 @@ func _on_timer_timeout():
 	print(style_list[num1])
 	var new_texture = style_list[num1] as StyleBoxTexture
 	var new_style = StyleBoxTexture.new()
-	new_style.texture = new_texture 
+	new_style.texture = new_texture
 	panel.add_theme_stylebox_override("panel", new_texture)
 	Global.index = num1
 	
