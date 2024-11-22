@@ -13,7 +13,7 @@ animations = [{
 "texture": ExtResource("2_ucyhh")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Lock0",
 "speed": 5.0
 }]
 
@@ -28,6 +28,7 @@ shape = SubResource("CircleShape2D_ko70f")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_cypyt")
+animation = &"Lock0"
 
 [connection signal="area_entered" from="AddingArea" to="." method="_on_adding_area_area_entered"]
 [connection signal="area_exited" from="AddingArea" to="." method="_on_adding_area_area_exited"]

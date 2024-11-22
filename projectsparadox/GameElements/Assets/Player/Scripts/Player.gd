@@ -9,9 +9,10 @@ var MovementDir = Vector2.ZERO
 var ObjectsInRange: Array = []
 
 @export var Enabled: bool = true
-
+@export var CameraMan:Camera2D
 
 func _ready():
+	CameraMan.PlayerObj = self
 	Global.PlayerObject = self
 	StateMachine.init(self)
 
@@ -32,7 +33,6 @@ func _process(delta):
 #Custom Functions
 func handle_movement(_delta , Speed):#Calculate the velocity based on the Speed and the MovementDir
 	velocity = MovementDir * Speed
-	print(MovementDir, Input.get_action_strength("Right"), velocity)
 	move_and_slide()#Apply velocity
 	
 	

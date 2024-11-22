@@ -1,8 +1,25 @@
 extends Node
 
+#Tracking progress
 var TimeP:int = 0
 var Phase:int = 0
 var TimeMod: int = 1
+
+#Objects to access
 var PlayerObject:Player
+
+var Inventory:Array[String] = []
+
 #index for menue
 var index: int =0
+
+#enable-diable functions
+func enable_player():
+	PlayerObject.Enabled = true
+func disable_player():
+	PlayerObject.Enabled = false
+
+func enable_table(Table):
+	Table.Enabled = true
+func disable_table(Table):
+	Table.Enabled = false
