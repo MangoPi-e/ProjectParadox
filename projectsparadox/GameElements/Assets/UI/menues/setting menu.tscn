@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bup8wy5x8r1uk"]
+[gd_scene load_steps=13 format=3 uid="uid://bup8wy5x8r1uk"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/SettingsMenu.gd" id="1_8ihlk"]
 [ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_ml60o"]
@@ -7,11 +7,11 @@
 [ext_resource type="Script" path="res://GameElements/Assets/UI/menues/Resolution.gd" id="4_n4tvn"]
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/mute.gd" id="4_ufmcx"]
 [ext_resource type="AudioStream" uid="uid://cjfbucmfetb8i" path="res://GameElements/Assets/sounds/mp3-juice.co - ReoNa 「ガジュマル ～Heaven in the Rain～」-Music Video-（TVアニメ「シャングリラ・フロンティア」第2クール EDテーマ）.mp3" id="5_jxdtu"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/menues/FullScreen.gd" id="5_lg1n2"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/menues/ExitFromSettings.gd" id="9_gy073"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3u160"]
 texture = ExtResource("1_ml60o")
-
-[sub_resource type="Theme" id="Theme_s7h8w"]
 
 [sub_resource type="FontVariation" id="FontVariation_qys3p"]
 
@@ -64,7 +64,10 @@ offset_bottom = -0.312012
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -72,7 +75,43 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 36
 text = "الصوت الرئيسي"
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+[node name="HSlider" type="HSlider" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -40.0
+max_value = 10.0
+step = 10.0
+script = ExtResource("3_6ktvr")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "صوت القوائم"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+min_value = -40.0
+max_value = 10.0
+step = 10.0
+script = ExtResource("3_6ktvr")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "صوت الشخصيات"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/VBoxContainer3"]
 layout_mode = 2
 min_value = -40.0
 max_value = 10.0
@@ -94,9 +133,10 @@ script = ExtResource("4_n4tvn")
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer"]
+[node name="CheckButton2" type="CheckButton" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
-theme = SubResource("Theme_s7h8w")
+script = ExtResource("5_lg1n2")
 
 [node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -172,5 +212,8 @@ theme_override_fonts/font = SubResource("FontVariation_qys3p")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_knrba")
 text = "الخروج"
+script = ExtResource("9_gy073")
 
 [connection signal="item_selected" from="VBoxContainer/OptionButton" to="VBoxContainer/OptionButton" method="_on_item_selected"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckButton2" to="VBoxContainer/HBoxContainer/CheckButton2" method="_on_toggled"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
