@@ -13,6 +13,12 @@ var Inventory:Array[String] = []
 #index for menue
 var index: int =0
 
+#global for toggle button
+var toggle: bool =false
+
+var toggle2: bool =false
+
+
 #enable-diable functions
 func enable_player():
 	PlayerObject.Enabled = true

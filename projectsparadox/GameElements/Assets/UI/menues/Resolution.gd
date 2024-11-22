@@ -1,14 +1,15 @@
 extends OptionButton
 
 @onready var resolutions = {
-	"720p (HD)": Vector2(1280, 720),
-	"1080p (Full HD)": Vector2(1920, 1080)
+	"720p (HD)": Vector2i(1280, 720),
+	"1080p (Full HD)": Vector2i(1920, 1080)
 }
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	AddResolution() 
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

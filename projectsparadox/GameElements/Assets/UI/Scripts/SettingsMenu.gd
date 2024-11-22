@@ -6,6 +6,10 @@ extends Node
 	preload("res://GameElements/Assets/UI/menues/stayles/main_menu2.tres"),
 	preload("res://GameElements/Assets/UI/menues/stayles/main_menu3.tres")
 ]
+@onready var resolutions = {
+	"720p (HD)": Vector2i(1280, 720),
+	"1080p (Full HD)": Vector2i(1920, 1080)
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +24,15 @@ func _ready() -> void:
 	print("starting")
 	timer.timeout.connect(Callable(self, "_on_timer_timeout"))
 	timer.start()
+	# Set the default selected resolution as a placeholder
+	var current_size = DisplayServer.window_get_size()
+	for index in range(resolutions.size()):
+		if resolutions.values()[index] == current_size:
+			if $VBoxContainer/OptionButton:
+				$VBoxContainer/OptionButton.selected = index
+				break
+			else:
+				print("OptionButton not found!")
 
 	
 

@@ -98,7 +98,6 @@ layout_mode = 2
 min_value = -40.0
 max_value = 10.0
 step = 10.0
-script = ExtResource("3_6ktvr")
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -116,7 +115,6 @@ layout_mode = 2
 min_value = -40.0
 max_value = 10.0
 step = 10.0
-script = ExtResource("3_6ktvr")
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
