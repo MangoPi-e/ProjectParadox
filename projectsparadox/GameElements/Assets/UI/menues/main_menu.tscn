@@ -46,13 +46,15 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_qea4s")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 53.0
-offset_top = -190.0
-offset_right = 536.0
-offset_bottom = 182.0
+anchors_preset = -1
+anchor_left = 0.046
+anchor_top = 0.207
+anchor_right = 0.465
+anchor_bottom = 0.781
+offset_left = 0.00799561
+offset_top = -0.136017
+offset_right = 0.319946
+offset_bottom = -0.0880127
 grow_vertical = 2
 theme_override_constants/separation = 16
 
@@ -82,13 +84,12 @@ text = "الخروج"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -576.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.191
 offset_top = -2.0
-offset_right = 574.0
-offset_bottom = 124.0
+offset_right = -2.0
+offset_bottom = 0.231987
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

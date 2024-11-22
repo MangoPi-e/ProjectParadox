@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bup8wy5x8r1uk"]
+[gd_scene load_steps=10 format=3 uid="uid://bup8wy5x8r1uk"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/SettingsMenu.gd" id="1_8ihlk"]
 [ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_ml60o"]
 [ext_resource type="FontFile" uid="uid://ceoqmhmvf4hx8" path="res://GameElements/Assets/UI/Fonts/bitsy-font-with-arabic.otf" id="2_3ma6u"]
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/Mastervolum.gd" id="3_6ktvr"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/menues/Resolution.gd" id="4_n4tvn"]
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/mute.gd" id="4_ufmcx"]
 [ext_resource type="AudioStream" uid="uid://cjfbucmfetb8i" path="res://GameElements/Assets/sounds/mp3-juice.co - ReoNa 「ガジュマル ～Heaven in the Rain～」-Music Video-（TVアニメ「シャングリラ・フロンティア」第2クール EDテーマ）.mp3" id="5_jxdtu"]
 
@@ -36,15 +37,15 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_3u160")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -512.0
-offset_top = -255.0
-offset_right = 512.0
-offset_bottom = 255.0
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.106
+anchor_right = 0.944
+anchor_bottom = 0.894
+offset_left = -0.512001
+offset_top = 0.311996
+offset_right = 0.511963
+offset_bottom = -0.312012
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -73,6 +74,7 @@ text = "دقة الشاشة"
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer"]
 layout_mode = 2
+script = ExtResource("4_n4tvn")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -83,6 +85,7 @@ theme = SubResource("Theme_s7h8w")
 
 [node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
@@ -135,3 +138,5 @@ vertical_alignment = 1
 stream = ExtResource("5_jxdtu")
 volume_db = -20.0
 autoplay = true
+
+[connection signal="item_selected" from="VBoxContainer/OptionButton" to="VBoxContainer/OptionButton" method="_on_item_selected"]
