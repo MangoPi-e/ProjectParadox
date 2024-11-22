@@ -16,5 +16,3 @@ func _process(delta: float) -> void:
 		TimeTracker = 0
 	elif TimeTracker >= TimeOff:
 		visible = true
-
-	print(TimeTracker)
