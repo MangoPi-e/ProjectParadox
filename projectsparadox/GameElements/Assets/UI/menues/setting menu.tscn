@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bup8wy5x8r1uk"]
+[gd_scene load_steps=7 format=3 uid="uid://bup8wy5x8r1uk"]
 
+[ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/SettingsMenu.gd" id="1_8ihlk"]
 [ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_ml60o"]
 [ext_resource type="FontFile" uid="uid://ceoqmhmvf4hx8" path="res://GameElements/Assets/UI/Fonts/bitsy-font-with-arabic.otf" id="2_3ma6u"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/Mastervolum.gd" id="3_6ktvr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3u160"]
 texture = ExtResource("1_ml60o")
@@ -15,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8ihlk")
 
 [node name="Panel_1" type="Panel" parent="."]
 layout_mode = 1
@@ -29,15 +32,86 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_3u160")
 
-[node name="Label" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -255.0
+offset_right = 512.0
+offset_bottom = 255.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "الصوت الرئيسي"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_6ktvr")
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "وضوح الشاشة"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_s7h8w")
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "وضع الشاشة الكاملة"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "اطفاء الصوت"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -575.0
-offset_right = 575.0
-offset_bottom = 126.0
+offset_left = -224.5
+offset_right = 224.5
+offset_bottom = 86.0
 grow_horizontal = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -50,57 +124,3 @@ theme_override_font_sizes/font_size = 46
 text = "settings menu"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -512.0
-offset_top = -511.0
-offset_right = 512.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 36
-text = "الصوت الرئيسي"
-
-[node name="HSlider" type="HSlider" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 36
-text = "وضوح الشاشة"
-
-[node name="OptionButton" type="OptionButton" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_s7h8w")
-
-[node name="CheckBox2" type="CheckBox" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="Label4" type="Label" parent="."]
-layout_mode = 2
-offset_left = 94.0
-offset_top = 278.0
-offset_right = 1118.0
-offset_bottom = 328.0
-theme_override_font_sizes/font_size = 36
-text = "وضع الشاشة الكاملة"
-
-[node name="Label3" type="Label" parent="."]
-layout_mode = 2
-offset_left = 102.0
-offset_top = 347.0
-offset_right = 1126.0
-offset_bottom = 397.0
-theme_override_font_sizes/font_size = 36
-text = "اطفاء الصوت"
