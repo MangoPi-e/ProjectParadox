@@ -20,7 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta):
 	if Enabled:#Check if no cutscene is on
-		MovementDir = Vector2(Input.get_action_strength("AnalogRight") - Input.get_action_strength("AnalogLeft"),Input.get_action_strength("AnalogDown") - Input.get_action_strength("AnalogUp"))#Getting the MovementDir
+		MovementDir = Vector2(Input.get_action_strength("Right") - Input.get_action_strength("Left"),Input.get_action_strength("Down") - Input.get_action_strength("Up"))#Getting the MovementDir
 		MovementDir = MovementDir.limit_length(1)#Normalize to handle (1,1) to be (cos(theta), sin(theta))
 		StateMachine.process_physics(delta)#Pass to the StateMachine
 
@@ -32,7 +32,7 @@ func _process(delta):
 #Custom Functions
 func handle_movement(_delta , Speed):#Calculate the velocity based on the Speed and the MovementDir
 	velocity = MovementDir * Speed
-	print(MovementDir, Input.get_action_strength("AnalogRight"), velocity)
+	print(MovementDir, Input.get_action_strength("Right"), velocity)
 	move_and_slide()#Apply velocity
 	
 	

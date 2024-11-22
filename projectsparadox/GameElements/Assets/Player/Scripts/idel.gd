@@ -7,9 +7,9 @@ func enter() -> void:
 	super()
 
 func process_input(_event) -> State:
-	if Input.is_action_just_pressed("Interact"):
+	if Input.is_action_just_pressed("Interact") and len(Parent.ObjectsInRange) > 0:
 		Parent.ObjectsInRange[0].player_says_work()
-	if Vector2(Input.get_action_strength("AnalogRight") - Input.get_action_strength("AnalogLeft"),Input.get_action_strength("AnalogUp") - Input.get_action_strength("AnalogDown")) != Vector2.ZERO and Parent.Enabled:
+	if Vector2(Input.get_action_strength("Right") - Input.get_action_strength("Left"),Input.get_action_strength("Up") - Input.get_action_strength("Down")) != Vector2.ZERO and Parent.Enabled:
 		return MoveState
 	return null
 	

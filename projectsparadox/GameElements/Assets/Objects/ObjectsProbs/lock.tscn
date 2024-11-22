@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0lutqq3nm0vh"]
+
+[ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/Lock.gd" id="1_av2u6"]
+[ext_resource type="Texture2D" uid="uid://vdifuc5tu7xk" path="res://GameElements/icon.svg" id="2_ucyhh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ko70f"]
+radius = 15.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cypyt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ucyhh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Lock" type="Node2D"]
+script = ExtResource("1_av2u6")
+
+[node name="AddingArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AddingArea"]
+shape = SubResource("CircleShape2D_ko70f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_cypyt")
+
+[connection signal="area_entered" from="AddingArea" to="." method="_on_adding_area_area_entered"]
+[connection signal="area_exited" from="AddingArea" to="." method="_on_adding_area_area_exited"]

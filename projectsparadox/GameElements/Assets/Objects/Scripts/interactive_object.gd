@@ -24,9 +24,9 @@ func activate_sequance(GoodToGo):
 		
 		
 
-func _on_interaction_area_body_entered(body: Node2D) -> void:
+func _on_interaction_area_body_entered(_body: Node2D) -> void:
 	PlayerInRange = Enabled
 
 
-func _on_interaction_area_body_exited(body: Node2D) -> void:
+func _on_interaction_area_body_exited(_body: Node2D) -> void:
 	PlayerInRange = false
