@@ -11,4 +11,9 @@ func _process(delta: float) -> void:
 	pass
 
 func _value_changed(value):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),value)
+	if(value==-40):
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),-80)
+		SoundManager.Mvolum = -80
+	else:
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),value)
+		SoundManager.Mvolum = value

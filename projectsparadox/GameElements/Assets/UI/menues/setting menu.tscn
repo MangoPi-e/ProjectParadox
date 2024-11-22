@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bup8wy5x8r1uk"]
+[gd_scene load_steps=9 format=3 uid="uid://bup8wy5x8r1uk"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/SettingsMenu.gd" id="1_8ihlk"]
 [ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_ml60o"]
 [ext_resource type="FontFile" uid="uid://ceoqmhmvf4hx8" path="res://GameElements/Assets/UI/Fonts/bitsy-font-with-arabic.otf" id="2_3ma6u"]
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/Mastervolum.gd" id="3_6ktvr"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/mute.gd" id="4_ufmcx"]
+[ext_resource type="AudioStream" uid="uid://cjfbucmfetb8i" path="res://GameElements/Assets/sounds/mp3-juice.co - ReoNa 「ガジュマル ～Heaven in the Rain～」-Music Video-（TVアニメ「シャングリラ・フロンティア」第2クール EDテーマ）.mp3" id="5_jxdtu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3u160"]
 texture = ExtResource("1_ml60o")
@@ -56,6 +58,9 @@ text = "الصوت الرئيسي"
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
+min_value = -40.0
+max_value = 10.0
+step = 10.0
 script = ExtResource("3_6ktvr")
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
@@ -64,7 +69,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 36
-text = "وضوح الشاشة"
+text = "دقة الشاشة"
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer"]
 layout_mode = 2
@@ -90,6 +95,7 @@ layout_mode = 2
 [node name="CheckButton" type="CheckButton" parent="VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
+script = ExtResource("4_ufmcx")
 
 [node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -124,3 +130,8 @@ theme_override_font_sizes/font_size = 46
 text = "settings menu"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jxdtu")
+volume_db = -20.0
+autoplay = true

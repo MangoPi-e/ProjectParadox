@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dm5bg6pys15mi"
+path="res://.godot/imported/mp3-juice.co - ReoNa 「ガジュマル ～Heaven in the Rain～」-Music Video-（TVアニメ「シャングリラ・フロンティア」第2クール EDテーマ）.mp3-df413a5623005a6e6e80528d994d8f46.mp3str"
+
+[deps]
+
+source_file="res://GameElements/Assets/UI/Scripts/mp3-juice.co - ReoNa 「ガジュマル ～Heaven in the Rain～」-Music Video-（TVアニメ「シャングリラ・フロンティア」第2クール EDテーマ）.mp3"
+dest_files=["res://.godot/imported/mp3-juice.co - ReoNa 「ガジュマル ～Heaven in the Rain～」-Music Video-（TVアニメ「シャングリラ・フロンティア」第2クール EDテーマ）.mp3-df413a5623005a6e6e80528d994d8f46.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
