@@ -21,6 +21,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 128
 script = ExtResource("1_pqca4")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]

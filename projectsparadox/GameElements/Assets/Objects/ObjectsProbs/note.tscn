@@ -4,5 +4,3 @@
 
 [node name="Note" type="Node2D"]
 script = ExtResource("1_kf8w3")
-Keys = null
-Enabled = null

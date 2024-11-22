@@ -10,6 +10,7 @@ var ObjectsInRange: Array = []
 
 @export var Enabled: bool = true
 @export var CameraMan:Camera2D
+var HaveTheClock
 
 func _ready():
 	CameraMan.PlayerObj = self

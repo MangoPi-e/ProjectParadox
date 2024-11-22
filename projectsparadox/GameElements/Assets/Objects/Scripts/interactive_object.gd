@@ -16,6 +16,7 @@ func _ready() -> void:
 	CameraMan = PlayerObj.CameraMan
 
 func _process(delta: float) -> void:
+	print(PlayerInRange)
 	if Enabled:
 		activate_sequance(Input.is_action_just_pressed("Interact"))
 

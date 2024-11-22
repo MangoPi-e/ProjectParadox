@@ -24,7 +24,10 @@ func process_physics(delta) -> State:
 		Parent.scale.x *= -1
 		Sign *= -1
 	Parent.handle_movement(delta, NormalSpeed)
-	
+	if Input.is_action_just_pressed("Puse") and Parent.HaveTheClock:
+		Parent.Enabled = false
+		Parent.CameraMan.FollowThePlayer = false
+		Parent.CameraMan.position.x = -4024
 	if Input.is_action_just_pressed("Interact") and len(Parent.ObjectsInRange) > 0:
 		Parent.ObjectsInRange[0].player_says_work()
 		MovementDir = Vector2.ZERO

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://mn7dtjtrfhce"]
+
+[ext_resource type="Texture2D" uid="uid://dwxl2nurntrc6" path="res://GameElements/Assets/ArtFiles/assets.png" id="1_5qb6w"]
+[ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/shelfs.gd" id="1_tha7t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y43ey"]
+size = Vector2(16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gcvs"]
+atlas = ExtResource("1_5qb6w")
+region = Rect2(0, 9, 32, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cypyt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gcvs")
+}],
+"loop": true,
+"name": &"Lock0",
+"speed": 5.0
+}]
+
+[node name="Lock" type="Node2D"]
+script = ExtResource("1_tha7t")
+
+[node name="SolidArea" type="StaticBody2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SolidArea"]
+shape = SubResource("RectangleShape2D_y43ey")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cypyt")
+animation = &"Lock0"

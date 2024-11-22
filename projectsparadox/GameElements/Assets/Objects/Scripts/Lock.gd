@@ -10,7 +10,7 @@ class_name Lock
 @export_category("Objects")
 @export var EffectedObjects:Node
 
-@onready var Anim = $AnimSprite
+@onready var Anim = $AnimatedSprite2D
 var ObjectInRange:Key
 var ChangePercentVector: Vector2
 
