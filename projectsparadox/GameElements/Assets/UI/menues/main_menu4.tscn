@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1ee6u5aq2xgl"]
+
+[ext_resource type="Texture2D" uid="uid://b1j85oku3omt6" path="res://GameElements/Assets/UI/menues/backgrounds/whiteboard.png" id="1_q1jij"]
+[ext_resource type="FontFile" uid="uid://ceoqmhmvf4hx8" path="res://GameElements/Assets/UI/Fonts/bitsy-font-with-arabic.otf" id="2_17oxu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ncq8e"]
+texture = ExtResource("1_q1jij")
+
+[sub_resource type="FontVariation" id="FontVariation_ygs1p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttlsi"]
+bg_color = Color(0.18359, 0.18359, 0.18359, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 7
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ncq8e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -522.0
+offset_top = -189.0
+offset_right = -42.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("FontVariation_ygs1p")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_ttlsi")
+text = "أبدأ اللعب"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("FontVariation_ygs1p")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_ttlsi")
+text = "الاعدادت"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("FontVariation_ygs1p")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_ttlsi")
+text = "الخروج"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_right = 575.0
+offset_bottom = 126.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_17oxu")
+theme_override_font_sizes/font_size = 46
+text = "Time travel"
+horizontal_alignment = 1
+vertical_alignment = 1
