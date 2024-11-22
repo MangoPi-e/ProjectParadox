@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c40w1ek820rfy"]
+[gd_scene load_steps=18 format=3 uid="uid://c40w1ek820rfy"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/MainMenu.gd" id="1_cr1lx"]
 [ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_u11hw"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://GameElements/Assets/UI/menues/GoToSettings.gd" id="3_b6cfc"]
 [ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="4_yyd6l"]
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/shake_rect.gd" id="5_fjejj"]
+[ext_resource type="Texture2D" uid="uid://dbrmpq0bdeydj" path="res://GameElements/Assets/UI/PlayerAnimation/alphacharachter-Sheet.png" id="7_noaj2"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/menues/Playeranimation.gd" id="8_0rxth"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qea4s"]
 texture = ExtResource("1_u11hw")
@@ -32,6 +34,42 @@ shader_parameter/shake_rate = 1.0
 shader_parameter/shake_speed = 5.0
 shader_parameter/shake_block_size = 30.5
 shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkj0n"]
+atlas = ExtResource("7_noaj2")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g30lj"]
+atlas = ExtResource("7_noaj2")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tf1cb"]
+atlas = ExtResource("7_noaj2")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u84n"]
+atlas = ExtResource("7_noaj2")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_luckf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkj0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g30lj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tf1cb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7u84n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -131,5 +169,12 @@ offset_top = -0.056
 offset_right = -1.0
 offset_bottom = -0.0560303
 script = ExtResource("5_fjejj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(866, 277)
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_luckf")
+frame_progress = 0.539054
+script = ExtResource("8_0rxth")
 
 [connection signal="pressed" from="VBoxContainer/Button2" to="VBoxContainer/Button2" method="_on_pressed"]

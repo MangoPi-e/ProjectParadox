@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	self.value=SoundManager.Mvolum
 
 func _value_changed(value):
 	if(value==-40):
