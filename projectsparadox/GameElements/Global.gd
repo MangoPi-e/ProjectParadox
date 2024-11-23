@@ -20,7 +20,9 @@ var toggle2: bool =false
 
 var visible:bool =false
 
-
+#Scene Managment
+func change_the_scene(Scene):
+	get_tree().change_scene_to_file(Scene)
 #enable-diable functions
 func enable_player():
 	PlayerObject.Enabled = true

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/shelfs.gd" id="1_tha7t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y43ey"]
-size = Vector2(16, 28)
+size = Vector2(16, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gcvs"]
 atlas = ExtResource("1_5qb6w")
@@ -28,6 +28,7 @@ script = ExtResource("1_tha7t")
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SolidArea"]
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_y43ey")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
