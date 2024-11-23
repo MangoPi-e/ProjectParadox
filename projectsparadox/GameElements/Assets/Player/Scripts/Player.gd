@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @onready var Anim = $PlayerAnimManager
 @onready var StateMachine = $StateMachine
+@onready var Glitch = $Glitch
 
 var MovementDir = Vector2.ZERO
 var LastAnim

@@ -8,17 +8,17 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_sfx_finished() -> void:
-	await get_tree().change_scene_to_file("res://GameElements/Assets/UI/menues/setting menu.tscn")
+	get_tree().change_scene_to_file("res://GameElements/Assets/UI/menues/setting menu.tscn")
 
 func _on_pressed() -> void:
 	if SFX:
 		print("SFX")
 		SFX.play()
-		await _on_sfx_finished()
+		_on_sfx_finished()
 
 
 

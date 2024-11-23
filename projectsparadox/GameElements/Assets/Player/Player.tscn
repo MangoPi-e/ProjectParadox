@@ -1,13 +1,14 @@
-[gd_scene load_steps=40 format=3 uid="uid://ckfanohmqqjvk"]
+[gd_scene load_steps=42 format=3 uid="uid://ckfanohmqqjvk"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/Player/Scripts/Player.gd" id="1_pqca4"]
 [ext_resource type="Script" path="res://GameElements/Assets/Player/Scripts/state_machine.gd" id="2_5kfkb"]
 [ext_resource type="Script" path="res://GameElements/Assets/Player/Scripts/idel.gd" id="3_n2txl"]
 [ext_resource type="Script" path="res://GameElements/Assets/Player/Scripts/Movement.gd" id="4_wdjv7"]
 [ext_resource type="Texture2D" uid="uid://x2cj4ss5m3x2" path="res://GameElements/Assets/ArtFiles/alphacharachter-Sheet.png" id="5_fxrbl"]
+[ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="6_2r0eo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umlxi"]
-size = Vector2(62, 110)
+size = Vector2(62, 57)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rcdw5"]
 atlas = ExtResource("5_fxrbl")
@@ -276,12 +277,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bgk3"]
+shader = ExtResource("6_2r0eo")
+shader_parameter/shake_power = 0.003
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 128
 script = ExtResource("1_pqca4")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, 31.5)
 shape = SubResource("RectangleShape2D_umlxi")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("StartingState")]
@@ -306,3 +315,12 @@ MovementSpeed = 200.0
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_68rni")
 animation = &"Idle Up"
+autoplay = "Idle Up"
+
+[node name="Glitch" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_1bgk3")
+offset_left = -3787.0
+offset_top = -2384.0
+offset_right = 3795.0
+offset_bottom = 2397.0

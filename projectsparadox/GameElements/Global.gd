@@ -2,8 +2,27 @@ extends Node
 
 #Tracking progress
 var TimeP:int = 0
-var Phase:int = 0
 var TimeMod: int = 1
+var TimeMod2: int = 1
+var TimeTrack: float = 0
+var MaxTime: int = 20
+var TimeTravel:int = 0
+var TimesPositions:Array[Vector2]
+func _process(delta: float) -> void:
+	if TimeTravel > 0:
+		TimeTrack += delta * TimeMod
+		if TimeTrack >= 0.5:
+			PlayerObject.Glitch.visible = false
+		if TimeTrack >= MaxTime - 0.5:
+			PlayerObject.Glitch.visible = true
+		if TimeTrack >= MaxTime:
+			TimeTrack = 0
+			TimeP = randi_range(0, TimeTravel)
+			PlayerObject.position = TimesPositions[TimeP]
+		
+	
+	
+	
 
 #Objects to access
 var PlayerObject:Player
