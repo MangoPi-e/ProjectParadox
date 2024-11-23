@@ -18,6 +18,8 @@ var toggle: bool =false
 
 var toggle2: bool =false
 
+var visible:bool =false
+
 
 #enable-diable functions
 func enable_player():
