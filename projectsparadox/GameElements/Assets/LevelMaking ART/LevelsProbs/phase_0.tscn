@@ -841,3 +841,5 @@ sprite_frames = SubResource("SpriteFrames_d5bvs")
 position = Vector2(23, -150)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("17_je3r6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
