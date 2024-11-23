@@ -5,7 +5,7 @@ extends Node2D
 var CameraMan:Camera2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	CenterPos.y = position.y - 7.5
+	CenterPos = Vector2(0, position.y - 7.5)
 	pass # Replace with function body.
 
 

@@ -34,6 +34,7 @@ func _process(delta: float) -> void:
 		scale.y = move_toward(scale.y, ChangePercentVector.y/ChangePercent, delta*2)
 
 func lock_open_sequence(IsOpen):
+	
 	if IsOpen and EffectedObjects:
 		for EObject in EffectedObjects.get_children():
 			if EObject.has_method("lock_open_sequence"):
@@ -45,7 +46,6 @@ func lock_open_sequence(IsOpen):
 func _on_adding_area_area_entered(area: Area2D) -> void:
 	ObjectInRange = area.get_parent()
 	
-		
 
 func _on_adding_area_area_exited(_area: Area2D) -> void:
 	ObjectInRange = null

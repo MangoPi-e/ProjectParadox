@@ -812,7 +812,7 @@ offset_bottom = 928.0
 rotation = -0.00972625
 
 [node name="Table" parent="." instance=ExtResource("4_lxb6m")]
-position = Vector2(0, -2064)
+position = Vector2(0, -3000)
 scale = Vector2(0.8, 0.8)
 Enabled = true
 CenterPos = Vector2(0, -2064)
@@ -833,33 +833,41 @@ scale = Vector2(0.2, 0.2)
 CameraMan = NodePath("../Camera2D")
 
 [node name="Shelf" parent="." instance=ExtResource("8_n3x20")]
-position = Vector2(-113, -80)
+position = Vector2(-136, -80)
+PositionB = Vector2(-92, -78)
+PositionA = Vector2(-65, -78)
+
+[node name="Shelf2" parent="." instance=ExtResource("8_n3x20")]
+position = Vector2(-104, -80)
+PositionB = Vector2(-92, -78)
+PositionA = Vector2(-65, -78)
+
+[node name="Shelf3" parent="." instance=ExtResource("8_n3x20")]
+position = Vector2(-72, -80)
 PositionB = Vector2(-92, -78)
 PositionA = Vector2(-65, -78)
 
 [node name="InteractiveObject" parent="." node_paths=PackedStringArray("Table", "PlayerObj") instance=ExtResource("4_x6xsb")]
 z_index = -5
-position = Vector2(-57, -68)
+position = Vector2(0, -64)
 Table = NodePath("../Table")
 PlayerObj = NodePath("../Player")
 
-[node name="Node" type="Node" parent="."]
-
-[node name="Lock" parent="Node" node_paths=PackedStringArray("EffectedObjects") instance=ExtResource("6_owtf6")]
-position = Vector2(6, -2087)
+[node name="Lock" parent="." node_paths=PackedStringArray("EffectedObjects") instance=ExtResource("6_owtf6")]
+position = Vector2(0, -3030)
 Keys = Array[String](["Key0"])
 EffectedObjects = NodePath("EffectedItems")
 
-[node name="EffectedItems" type="Node" parent="Node/Lock"]
+[node name="EffectedItems" type="Node" parent="Lock"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node/Lock/EffectedItems" node_paths=PackedStringArray("PlayerObject")]
-position = Vector2(-4024, 0)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Lock/EffectedItems" node_paths=PackedStringArray("PlayerObject")]
+position = Vector2(-5800, 0)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_g2w0k")
 frame = 19
 frame_progress = 1.0
 script = ExtResource("8_tqp4l")
-PlayerObject = NodePath("../../../../Player")
+PlayerObject = NodePath("../../../Player")
 
-[node name="Key" parent="Node" instance=ExtResource("5_kw1de")]
-position = Vector2(88, -2078)
+[node name="Key" parent="." instance=ExtResource("5_kw1de")]
+position = Vector2(155, -3070)
