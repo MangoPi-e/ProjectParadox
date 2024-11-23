@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://svjm7rl1xlne"]
+
+[ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/Cage.gd" id="1_hw1fy"]
+[ext_resource type="Texture2D" uid="uid://be5q18dqxbx10" path="res://GameElements/Assets/ArtFiles/assets1.0 fut ure.png" id="2_gy0un"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2fyj"]
+atlas = ExtResource("2_gy0un")
+region = Rect2(112, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qodlf"]
+atlas = ExtResource("2_gy0un")
+region = Rect2(160, 16, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_edhwn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2fyj")
+}],
+"loop": true,
+"name": &"Carrot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qodlf")
+}],
+"loop": true,
+"name": &"Pice",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stvue"]
+size = Vector2(32, 26)
+
+[node name="Cage" type="Node2D"]
+script = ExtResource("1_hw1fy")
+
+[node name="AnimSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_edhwn")
+animation = &"Pice"
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_stvue")

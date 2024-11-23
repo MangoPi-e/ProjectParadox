@@ -7,13 +7,13 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	self.value=SoundManager.Mvolum
 
-func _value_changed(value):
+func _value_changed(Value):
 	if(value==-40):
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),-80)
 		SoundManager.Mvolum = -80
 	else:
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),value)
-		SoundManager.Mvolum = value
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),Value)
+		SoundManager.Mvolum = Value

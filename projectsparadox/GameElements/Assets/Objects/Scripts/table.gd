@@ -18,9 +18,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Enabled:
-		pass
+func _process(_delta: float) -> void:
+	if Enabled and Input.is_action_pressed("Puse"):
+		CameraMan.FollowThePlayer = true
+		Global.enable_player()
+		Global.disable_table(self)
 	else:
 		InvEntry.Enabled = false
 

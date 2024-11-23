@@ -1,8 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://cy4qwsyn0euh7"]
+[gd_scene load_steps=10 format=3 uid="uid://cy4qwsyn0euh7"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/globe.gd" id="1_gi5em"]
 [ext_resource type="Texture2D" uid="uid://n3hem2jngsvf" path="res://GameElements/Assets/ArtFiles/assets1.0 changed the shelves.png" id="2_704v1"]
 [ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="3_rdun5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e5is3"]
+radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vc0mi"]
+size = Vector2(32, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kum0r"]
 atlas = ExtResource("2_704v1")
@@ -45,14 +51,21 @@ script = ExtResource("1_gi5em")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_e5is3")
 
 [node name="Interact" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interact"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_vc0mi")
+debug_color = Color(0.609591, 0.457201, 0.752646, 0.42)
 
 [node name="AnimSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qhqbt")
 animation = &"Close"
+autoplay = "Close"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

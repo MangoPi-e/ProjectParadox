@@ -8,29 +8,29 @@ var PlayerInRange:bool = false
 
 @onready var ShakeRect = $ColorRect
 @onready var Anim = $AnimSprite
-func _process(delta: float) -> void:
-	ShakeRect.ShakeRect.visible = Glitch
+func _process(_delta: float) -> void:
+	ShakeRect.visible = Glitch
 	if Input.is_action_pressed("Interact") and PlayerInRange:
 		match Mode:
 			1: 
 				OtherPot.Mode = Mode + 1
 				Mode = 0
-				Global.Inventory.append("Item1")
+				Global.Inventory.append("Seed1")
 			2:
 				OtherPot.Glitch = true
 				OtherPot.Anim.play("PotCarrot")
 				OtherPot.Mode = Mode + 1
 				Mode = 0
-				Global.Inventory.erase("Item1")
+				Global.Inventory.erase("Seed1")
 			3:
 				Mode = 0
 				Anim.play("PotFull")
 				OtherPot.Anim.play("PotFull")
-				Global.Inventory.append("Item2")
+				Global.Inventory.append("Carrot1")
 
-func _on_interact_body_entered(body: Node2D) -> void:
+func _on_interact_body_entered(_body: Node2D) -> void:
 	PlayerInRange = Enabled
 
 
-func _on_interact_body_exited(body: Node2D) -> void:
+func _on_interact_body_exited(_body: Node2D) -> void:
 	PlayerInRange = false

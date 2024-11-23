@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func AddResolution():
@@ -22,9 +22,9 @@ func AddResolution():
 
 
 func _on_item_selected(index: int) -> void:
-	var size = resolutions.get((self.get_item_text(index)))
-	DisplayServer.window_set_size(size)
+	var Size = resolutions.get((self.get_item_text(index)))
+	DisplayServer.window_set_size(Size)
 	var viewport = get_viewport()
-	viewport.size = size
+	viewport.size = Size
 	
 	
