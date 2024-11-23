@@ -20,9 +20,6 @@ func process_physics(delta) -> State:
 	else:
 		NormalSpeed = MovementSpeed
 	MovementDir = Parent.MovementDir
-	if sign(MovementDir.x) == -Sign:
-		Parent.scale.x *= -1
-		Sign *= -1
 	Parent.handle_movement(delta, NormalSpeed)
 	if Input.is_action_just_pressed("Puse") and Parent.HaveTheClock:
 		Parent.Enabled = false

@@ -153,7 +153,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_yx2lp")
 }],
 "loop": true,
-"name": &"IdleDown",
+"name": &"Idle Down",
 "speed": 2.0
 }, {
 "frames": [{
@@ -170,7 +170,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_umjxg")
 }],
 "loop": true,
-"name": &"IdleLeft",
+"name": &"Idle Left",
 "speed": 2.0
 }, {
 "frames": [{
@@ -187,7 +187,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_fq1q3")
 }],
 "loop": true,
-"name": &"IdleRight",
+"name": &"Idle Right",
 "speed": 2.0
 }, {
 "frames": [{
@@ -204,7 +204,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_oa01b")
 }],
 "loop": true,
-"name": &"IdleUp",
+"name": &"Idle Up",
 "speed": 2.0
 }, {
 "frames": [{
@@ -221,7 +221,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_gq71x")
 }],
 "loop": true,
-"name": &"MoveDown",
+"name": &"Move Down",
 "speed": 5.0
 }, {
 "frames": [{
@@ -238,7 +238,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_geruu")
 }],
 "loop": true,
-"name": &"MoveLeft",
+"name": &"Move Left",
 "speed": 5.0
 }, {
 "frames": [{
@@ -255,7 +255,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_pnlr5")
 }],
 "loop": true,
-"name": &"MoveRight",
+"name": &"Move Right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -272,7 +272,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_kadd8")
 }],
 "loop": true,
-"name": &"MoveUp",
+"name": &"Move Up",
 "speed": 5.0
 }]
 
@@ -303,4 +303,4 @@ AnimationName = "Move"
 [node name="PlayerAnimManager" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_68rni")
-animation = &"MoveRight"
+animation = &"Idle Up"

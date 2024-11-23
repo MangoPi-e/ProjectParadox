@@ -26,7 +26,7 @@ func process_frame(_delta: float) -> State:
 	elif Parent.MovementDir.y > 0:
 		Mod = "Down"
 	elif Parent.MovementDir.x < 0:
-		Mod = "Right"
+		Mod = "Left"
 	elif Parent.MovementDir.x > 0:
 		Mod = "Right"
 	elif Parent.LastAnim:
@@ -34,8 +34,7 @@ func process_frame(_delta: float) -> State:
 	else:
 		Mod = "Down"
 	Parent.LastAnim = Mod
-	print(Mod)
-	Parent.Anim.play(AnimationName+Mod)
+	Parent.Anim.play(AnimationName+" "+Mod)
 	return null
 
 func process_physics(_delta: float) -> State:
