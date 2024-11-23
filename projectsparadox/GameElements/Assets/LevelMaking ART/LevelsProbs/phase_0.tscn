@@ -1,8 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://csa6meogwx54p"]
+<<<<<<< HEAD
+[gd_scene load_steps=37 format=3 uid="uid://csa6meogwx54p"]
+=======
+[gd_scene load_steps=23 format=3 uid="uid://trxgtcygg6s1"]
+>>>>>>> 0020352e62b200eb1d63598e65b132f4b4138c54
 
 [ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="1_3p0n3"]
 [ext_resource type="Texture2D" uid="uid://ctlsgj5g5snql" path="res://GameElements/Assets/LevelMaking ART/World/lab_tileset_LITE/lab_tileset_LITE.png" id="2_arll6"]
 [ext_resource type="PackedScene" uid="uid://ckfanohmqqjvk" path="res://GameElements/Assets/Player/Player.tscn" id="2_mo7cx"]
+[ext_resource type="Script" path="res://GameElements/Assets/LevelMaking ART/LevelsProbs/Present.gd" id="2_poxu0"]
 [ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/CameraMan.gd" id="3_nw3ym"]
 [ext_resource type="Texture2D" uid="uid://bqykftr23ruj4" path="res://GameElements/Assets/ArtFiles/Tiles Floor.png" id="3_wjh1i"]
 [ext_resource type="PackedScene" uid="uid://b0l1t2d26jn8u" path="res://GameElements/Assets/Objects/ObjectsProbs/table.tscn" id="4_lxb6m"]
@@ -10,8 +15,16 @@
 [ext_resource type="PackedScene" uid="uid://dw1ogxafjoroa" path="res://GameElements/Assets/Objects/ObjectsProbs/interactive_object.tscn" id="4_x6xsb"]
 [ext_resource type="PackedScene" uid="uid://bkp5fx8vpxt6o" path="res://GameElements/Assets/Objects/ObjectsProbs/key.tscn" id="5_kw1de"]
 [ext_resource type="PackedScene" uid="uid://d1b3deq236v31" path="res://GameElements/Assets/Objects/ObjectsProbs/lock.tscn" id="6_owtf6"]
-[ext_resource type="PackedScene" uid="uid://mn7dtjtrfhce" path="res://GameElements/Assets/Objects/ObjectsProbs/Shelfs.tscn" id="8_n3x20"]
+[ext_resource type="Texture2D" uid="uid://n3hem2jngsvf" path="res://GameElements/Assets/ArtFiles/assets1.0 changed the shelves.png" id="10_gr14y"]
+[ext_resource type="Texture2D" uid="uid://c747en25p82a" path="res://GameElements/Assets/ArtFiles/TIMEMACHINE2.png" id="11_36w86"]
 [ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/SceneChangeLocklock.gd" id="11_lvb8d"]
+<<<<<<< HEAD
+[ext_resource type="PackedScene" uid="uid://dcb4orknuvou3" path="res://GameElements/Assets/Objects/ObjectsProbs/note.tscn" id="14_b8m2p"]
+[ext_resource type="Texture2D" uid="uid://cap347l7i8rj8" path="res://GameElements/Assets/ArtFiles/coffee mug2.png" id="16_xxavf"]
+[ext_resource type="Texture2D" uid="uid://bda3ac5ojig88" path="res://GameElements/Assets/ArtFiles/gears2.png" id="17_je3r6"]
+=======
+[ext_resource type="AudioStream" uid="uid://c86xnxfb42ayr" path="res://GameElements/Assets/sounds/SFX/click-buttons-ui-menu-sounds-effects-button-7-203601.mp3" id="14_yqqvv"]
+>>>>>>> 0020352e62b200eb1d63598e65b132f4b4138c54
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8po6j"]
 shader = ExtResource("1_3p0n3")
@@ -589,6 +602,36 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 0)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr4ky"]
+atlas = ExtResource("10_gr14y")
+region = Rect2(32, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1k6x7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr4ky")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi85w"]
+atlas = ExtResource("10_gr14y")
+region = Rect2(112, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q4dlu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi85w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v0khx"]
 shader = ExtResource("1_3p0n3")
 shader_parameter/shake_power = 0.03
@@ -597,10 +640,72 @@ shader_parameter/shake_speed = 8.0
 shader_parameter/shake_block_size = 30.5
 shader_parameter/shake_color_rate = 0.01
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p4l8"]
+atlas = ExtResource("10_gr14y")
+region = Rect2(144, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j1x77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p4l8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42t7a"]
+atlas = ExtResource("10_gr14y")
+region = Rect2(208, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x4m47"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42t7a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxnii"]
+atlas = ExtResource("11_36w86")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tqgkq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxnii")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s6bh"]
+atlas = ExtResource("16_xxavf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5bvs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s6bh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Phase0" type="Node2D"]
 material = SubResource("ShaderMaterial_8po6j")
+script = ExtResource("2_poxu0")
 
 [node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_yw4p1")
 format = 2
 layer_0/name = "Ground"
@@ -613,7 +718,7 @@ layer_1/z_index = -99
 layer_1/tile_data = PackedInt32Array(-458762, 851969, 5, -393226, 786433, 6, -327690, 786433, 7, -262154, 786433, 8, -262153, 851969, 8, -262152, 851969, 8, -262151, 851969, 8, -262150, 851969, 8, -262149, 851969, 8, -262148, 851969, 8, -262147, 851969, 8, -262146, 851969, 8, -262145, 851969, 8, -327680, 851969, 8, -327679, 851969, 8, -327678, 851969, 8, -327677, 851969, 8, -327676, 851969, 8, -327675, 851969, 8, -327674, 851969, 8, -327673, 851969, 8, -327672, 851969, 8, -327671, 851969, 8, -524278, 917505, 5, -458742, 983041, 6, -393206, 983041, 7, -327670, 983041, 8, -458761, 917505, 5, -393225, 917505, 6, -327689, 917505, 7, -458760, 851969, 5, -393224, 851969, 6, -327688, 851969, 7, -458759, 917505, 5, -393223, 917505, 6, -327687, 917505, 7, -458758, 851969, 5, -393222, 851969, 6, -327686, 851969, 7, -458757, 917505, 5, -393221, 917505, 6, -327685, 917505, 7, -458756, 851969, 5, -393220, 851969, 6, -327684, 851969, 7, -458755, 917505, 5, -393219, 917505, 6, -327683, 917505, 7, -458754, 851969, 5, -393218, 851969, 6, -327682, 851969, 7, -458753, 917505, 5, -393217, 917505, 6, -327681, 917505, 7, -524288, 851969, 5, -458752, 851969, 6, -393216, 851969, 7, -524287, 917505, 5, -458751, 917505, 6, -393215, 917505, 7, -524286, 851969, 5, -458750, 851969, 6, -393214, 851969, 7, -524285, 917505, 5, -458749, 917505, 6, -393213, 917505, 7, -524284, 851969, 5, -458748, 851969, 6, -393212, 851969, 7, -524283, 917505, 5, -458747, 917505, 6, -393211, 917505, 7, -524282, 851969, 5, -458746, 851969, 6, -393210, 851969, 7, -524281, 917505, 5, -458745, 917505, 6, -393209, 917505, 7, -524280, 851969, 5, -458744, 851969, 6, -393208, 851969, 7, -524279, 917505, 5, -458743, 917505, 6, -393207, 917505, 7)
 layer_2/name = "FrontItems"
 layer_2/y_sort_origin = -1
-layer_2/tile_data = PackedInt32Array(-524283, 786435, 2, -458747, 786435, 3, -524282, 851971, 2, -458746, 851971, 3, 131081, 262147, 6, 196617, 262147, 7, 131082, 327683, 6, 196618, 327683, 7, -393222, 3, 0, -327686, 3, 1, -262150, 3, 2, -196614, 3, 3, -393221, 65539, 0, -327685, 65539, 1, -262149, 65539, 2, -196613, 65539, 3)
+layer_2/tile_data = PackedInt32Array(-524283, 786435, 2, -458747, 786435, 3, -524282, 851971, 2, -458746, 851971, 3, 131081, 262147, 6, 196617, 262147, 7, 131082, 327683, 6, 196618, 327683, 7, -327672, 3, 5, -262136, 3, 6, -327671, 65539, 5, -262135, 65539, 6, -393224, 3, 0, -327688, 3, 1, -262152, 3, 2, -196616, 3, 3, -393223, 65539, 0, -327687, 65539, 1, -262151, 65539, 2, -196615, 65539, 3)
 layer_3/name = "FrontItems22"
 layer_3/z_index = -2
 layer_4/name = "FrontItems32"
@@ -654,6 +759,15 @@ energy = 0.5
 texture = SubResource("GradientTexture2D_s2kgl")
 texture_scale = 10.91
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TileMap"]
+position = Vector2(150, -82)
+sprite_frames = SubResource("SpriteFrames_1k6x7")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="TileMap"]
+position = Vector2(137, -80.5)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_q4dlu")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_v0khx")
@@ -664,13 +778,14 @@ offset_bottom = 928.0
 rotation = -0.00972625
 
 [node name="Table" parent="." instance=ExtResource("4_lxb6m")]
+z_index = -2
 position = Vector2(0, -3000)
 scale = Vector2(0.8, 0.8)
 Enabled = true
 CenterPos = Vector2(0, -2064)
+EnableInventory = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-4024, 0)
 scale = Vector2(0.2, 0.2)
 zoom = Vector2(2.3, 2.3)
 limit_left = -10000
@@ -680,26 +795,66 @@ limit_bottom = 10000
 script = ExtResource("3_nw3ym")
 
 [node name="Player" parent="." node_paths=PackedStringArray("CameraMan") instance=ExtResource("2_mo7cx")]
-position = Vector2(-2.84217e-14, 51)
-scale = Vector2(0.2, 0.2)
+position = Vector2(0, 89)
+scale = Vector2(0.6, 0.6)
 CameraMan = NodePath("../Camera2D")
-
-[node name="Shelf" parent="." instance=ExtResource("8_n3x20")]
-position = Vector2(-80, -76)
-PositionB = Vector2(-92, -78)
-PositionA = Vector2(-65, -78)
 
 [node name="InteractiveObject" parent="." node_paths=PackedStringArray("Table", "PlayerObj") instance=ExtResource("4_x6xsb")]
 z_index = -5
-position = Vector2(0, -64)
+position = Vector2(3, -126)
+scale = Vector2(2, 2)
 Table = NodePath("../Table")
 PlayerObj = NodePath("../Player")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="InteractiveObject"]
+position = Vector2(18, -10)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_j1x77")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="InteractiveObject"]
+position = Vector2(-16, -10)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_x4m47")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="InteractiveObject"]
+position = Vector2(0, -11)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_tqgkq")
+
 [node name="SceneChangeLock" parent="." instance=ExtResource("6_owtf6")]
-position = Vector2(0, -3030)
+z_index = -1
+position = Vector2(4.54747e-13, -3014)
+scale = Vector2(2.5, 2.5)
 script = ExtResource("11_lvb8d")
+Keys = Array[String](["Key_0"])
 Scene = "res://GameElements/Assets/LevelMaking ART/LevelsProbs/AnimationScene_0.tscn"
-Keys = Array[String](["Key0"])
 
 [node name="Key" parent="." instance=ExtResource("5_kw1de")]
+<<<<<<< HEAD
+position = Vector2(70, -3058)
+scale = Vector2(1.5, 1.5)
+ID = "Key_0"
+
+[node name="Note" parent="." instance=ExtResource("14_b8m2p")]
+z_index = -1
+position = Vector2(-137, -3030)
+scale = Vector2(2.5, 2.5)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Note"]
+z_index = -1
+position = Vector2(110, -3.6)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_d5bvs")
+
+[node name="Gears2" type="Sprite2D" parent="."]
+position = Vector2(23, -150)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("17_je3r6")
+=======
 position = Vector2(155, -3070)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_yqqvv")
+volume_db = 6.559
+bus = &"SFX"
+>>>>>>> 0020352e62b200eb1d63598e65b132f4b4138c54

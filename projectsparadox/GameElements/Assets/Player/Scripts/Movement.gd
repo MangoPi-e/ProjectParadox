@@ -3,8 +3,8 @@ extends State
 
 @export
 var IdelState: State
-var RunSpeed: float
-var NormalSpeed: float
+@export var RunSpeed: float = 200
+@export var NormalSpeed: float = 200
 var MovementDir
 var Sign = 1
 

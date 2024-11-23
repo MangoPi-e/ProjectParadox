@@ -13,7 +13,9 @@ func _on_mute_checkbox_toggled(checked: bool):
 	if checked:
 		# Mute
 		Global.toggle2=true
-		AudioServer.set_bus_volume_db(master_index, -80)
+		AudioServer.set_bus_mute(master_index, true)
 	else:
 		# Unmute
+		Global.toggle2=false
+		AudioServer.set_bus_mute(master_index, false)
 		AudioServer.set_bus_volume_db(master_index, SoundManager.Mvolum)

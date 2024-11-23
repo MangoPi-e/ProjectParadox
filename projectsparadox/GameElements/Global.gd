@@ -20,6 +20,8 @@ var toggle2: bool =false
 
 var visible:bool =false
 
+var CheckIfExit:bool =false
+
 #Scene Managment
 func change_the_scene(Scene):
 	get_tree().change_scene_to_file(Scene)

@@ -292,11 +292,13 @@ StartingState = NodePath("Idle")
 script = ExtResource("3_n2txl")
 MoveState = NodePath("../Movement")
 AnimationName = "Idle"
+MovementSpeed = 200.0
 
 [node name="Movement" type="Node" parent="StateMachine" node_paths=PackedStringArray("IdelState")]
 script = ExtResource("4_wdjv7")
 IdelState = NodePath("../Idle")
 AnimationName = "Move"
+MovementSpeed = 200.0
 
 [node name="Visuals" type="Node" parent="."]
 

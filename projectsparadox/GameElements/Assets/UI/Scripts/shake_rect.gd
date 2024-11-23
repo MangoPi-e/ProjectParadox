@@ -20,8 +20,6 @@ func _ready() -> void:
 
 	print(TimeTracker)
 func _on_timer_timeout():
-	
-	if Global.visible==false:
 		Global.visible=true
 		visible = Global.visible
 	

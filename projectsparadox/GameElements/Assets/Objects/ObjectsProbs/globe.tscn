@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy4qwsyn0euh7"]
+[gd_scene load_steps=8 format=3 uid="uid://cy4qwsyn0euh7"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/globe.gd" id="1_gi5em"]
 [ext_resource type="Texture2D" uid="uid://n3hem2jngsvf" path="res://GameElements/Assets/ArtFiles/assets1.0 changed the shelves.png" id="2_704v1"]
+[ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="3_rdun5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kum0r"]
+atlas = ExtResource("2_704v1")
+region = Rect2(32, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nnt6d"]
 atlas = ExtResource("2_704v1")
@@ -11,7 +16,7 @@ region = Rect2(47, 80, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nnt6d")
+"texture": SubResource("AtlasTexture_kum0r")
 }],
 "loop": true,
 "name": &"Close",
@@ -26,10 +31,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i8f31"]
+shader = ExtResource("3_rdun5")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
 [node name="Globe" type="Node2D"]
 script = ExtResource("1_gi5em")
-Mode = null
-Enabled = null
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -42,6 +53,14 @@ Enabled = null
 [node name="AnimSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qhqbt")
 animation = &"Close"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_i8f31")
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [connection signal="body_entered" from="Interact" to="." method="_on_interact_body_entered"]
 [connection signal="body_exited" from="Interact" to="." method="_on_interact_body_exited"]

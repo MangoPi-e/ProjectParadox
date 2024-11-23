@@ -7,7 +7,13 @@ extends Node2D
 @export_category("Objects")
 var ObjectInRange:Key
 var ChangePercentVector: Vector2
+@onready var Anim = $InventoryEntrySprite
+
 func _ready() -> void:
+	if Enabled:
+		Anim.play("Show")
+	else:
+		Anim.play("Hide")
 	ChangePercentVector = scale * ChangePercent
 
 func _process(delta: float) -> void:
