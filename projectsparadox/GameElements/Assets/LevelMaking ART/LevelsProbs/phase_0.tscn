@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=37 format=3 uid="uid://csa6meogwx54p"]
-=======
-[gd_scene load_steps=23 format=3 uid="uid://trxgtcygg6s1"]
->>>>>>> 0020352e62b200eb1d63598e65b132f4b4138c54
 
 [ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="1_3p0n3"]
 [ext_resource type="Texture2D" uid="uid://ctlsgj5g5snql" path="res://GameElements/Assets/LevelMaking ART/World/lab_tileset_LITE/lab_tileset_LITE.png" id="2_arll6"]
@@ -19,13 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://n3hem2jngsvf" path="res://GameElements/Assets/ArtFiles/assets1.0 changed the shelves.png" id="10_gr14y"]
 [ext_resource type="Texture2D" uid="uid://c747en25p82a" path="res://GameElements/Assets/ArtFiles/TIMEMACHINE2.png" id="11_36w86"]
 [ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/SceneChangeLocklock.gd" id="11_lvb8d"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://dcb4orknuvou3" path="res://GameElements/Assets/Objects/ObjectsProbs/note.tscn" id="14_b8m2p"]
 [ext_resource type="Texture2D" uid="uid://cap347l7i8rj8" path="res://GameElements/Assets/ArtFiles/coffee mug2.png" id="16_xxavf"]
 [ext_resource type="Texture2D" uid="uid://bda3ac5ojig88" path="res://GameElements/Assets/ArtFiles/gears2.png" id="17_je3r6"]
-=======
-[ext_resource type="AudioStream" uid="uid://c86xnxfb42ayr" path="res://GameElements/Assets/sounds/SFX/click-buttons-ui-menu-sounds-effects-button-7-203601.mp3" id="14_yqqvv"]
->>>>>>> 0020352e62b200eb1d63598e65b132f4b4138c54
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8po6j"]
 shader = ExtResource("1_3p0n3")
@@ -831,7 +823,6 @@ Keys = Array[String](["Key_0"])
 Scene = "res://GameElements/Assets/LevelMaking ART/LevelsProbs/AnimationScene_0.tscn"
 
 [node name="Key" parent="." instance=ExtResource("5_kw1de")]
-<<<<<<< HEAD
 position = Vector2(70, -3058)
 scale = Vector2(1.5, 1.5)
 ID = "Key_0"
@@ -851,11 +842,3 @@ sprite_frames = SubResource("SpriteFrames_d5bvs")
 position = Vector2(23, -150)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("17_je3r6")
-=======
-position = Vector2(155, -3070)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_yqqvv")
-volume_db = 6.559
-bus = &"SFX"
->>>>>>> 0020352e62b200eb1d63598e65b132f4b4138c54
