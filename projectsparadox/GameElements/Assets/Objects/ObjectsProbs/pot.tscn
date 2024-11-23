@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://cu2sx4go4ivda"]
+
+[ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/pot.gd" id="1_8x8ps"]
+[ext_resource type="Texture2D" uid="uid://n3hem2jngsvf" path="res://GameElements/Assets/ArtFiles/assets1.0 changed the shelves.png" id="2_fv2e0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq114"]
+atlas = ExtResource("2_fv2e0")
+region = Rect2(224, 144, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qwqo"]
+atlas = ExtResource("2_fv2e0")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73idn"]
+atlas = ExtResource("2_fv2e0")
+region = Rect2(63, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2q1qn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq114")
+}],
+"loop": true,
+"name": &"PotCarrot ",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qwqo")
+}],
+"loop": true,
+"name": &"PotEmpty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73idn")
+}],
+"loop": true,
+"name": &"PotFull",
+"speed": 5.0
+}]
+
+[node name="Pot" type="Node2D"]
+script = ExtResource("1_8x8ps")
+
+[node name="Interact" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact"]
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+
+[node name="AnimSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2q1qn")
+animation = &"PotFull"
+
+[connection signal="body_entered" from="Interact" to="." method="_on_interact_body_entered"]
+[connection signal="body_exited" from="Interact" to="." method="_on_interact_body_exited"]
