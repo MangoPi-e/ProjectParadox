@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ctu82i7qa3mft"]
+[gd_scene load_steps=20 format=3 uid="uid://bpji6xmk0swx6"]
 
 [ext_resource type="Texture2D" uid="uid://ctlsgj5g5snql" path="res://GameElements/Assets/LevelMaking ART/World/lab_tileset_LITE/lab_tileset_LITE.png" id="1_07l1m"]
 [ext_resource type="Texture2D" uid="uid://bqykftr23ruj4" path="res://GameElements/Assets/ArtFiles/Tiles Floor.png" id="2_dnfu1"]

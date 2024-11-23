@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://csa6meogwx54p"]
+[gd_scene load_steps=22 format=3 uid="uid://trxgtcygg6s1"]
 
 [ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="1_3p0n3"]
 [ext_resource type="Texture2D" uid="uid://ctlsgj5g5snql" path="res://GameElements/Assets/LevelMaking ART/World/lab_tileset_LITE/lab_tileset_LITE.png" id="2_arll6"]

@@ -11,12 +11,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _on_sfx_finished() -> void:
+	get_tree().change_scene_to_file("res://GameElements/Assets/UI/menues/setting menu.tscn")
+
 func _on_pressed() -> void:
 	if SFX:
 		print("SFX")
 		SFX.play()
-	await SFX.playing_finished
-	get_tree().change_scene_to_file("res://GameElements/Assets/UI/menues/setting menu.tscn")
+		await _on_sfx_finished()
+
+
 
 func _on_mouse_entered():
 	# Change button style when the mouse hovers over it
