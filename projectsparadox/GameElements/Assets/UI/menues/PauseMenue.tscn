@@ -1,9 +1,68 @@
-[gd_scene format=3 uid="uid://dxijqa67fri7n"]
+[gd_scene load_steps=3 format=3 uid="uid://dxijqa67fri7n"]
+
+[sub_resource type="Animation" id="Animation_5oj2e"]
+resource_name = "pause menu"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_52yay"]
+_data = {
+"pause menu": SubResource("Animation_5oj2e")
+}
 
 [node name="PauseMenue" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 645.0
+color = Color(1, 1, 1, 0)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.205
+anchor_top = 0.042
+anchor_right = 0.849
+anchor_bottom = 0.954
+offset_left = -0.160019
+offset_top = -0.216002
+offset_right = -0.0480347
+offset_bottom = -0.192017
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 414.0
+offset_top = 27.0
+offset_right = 796.0
+offset_bottom = 623.0
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 70
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "اكمال اللعب"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_bottom = 100
+
+[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "الرجوع للقائمة الرئيسية"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_52yay")
+}
