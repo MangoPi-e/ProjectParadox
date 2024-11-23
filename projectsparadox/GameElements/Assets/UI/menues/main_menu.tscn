@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c40w1ek820rfy"]
+[gd_scene load_steps=23 format=3 uid="uid://c40w1ek820rfy"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/MainMenu.gd" id="1_cr1lx"]
 [ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_u11hw"]
@@ -30,6 +30,8 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 shadow_size = 7
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nbsj0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e6vlg"]
 shader = ExtResource("4_yyd6l")
@@ -162,6 +164,14 @@ text = "Time travel"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Arabic-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(615, 95)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("12_cw4xt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Arabic-removebg-preview"]
+sprite_frames = SubResource("SpriteFrames_nbsj0")
+
 [node name="ShakeRect" type="ColorRect" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_e6vlg")
@@ -188,11 +198,6 @@ script = ExtResource("8_0rxth")
 stream = ExtResource("4_yi2lb")
 volume_db = 6.559
 bus = &"SFX"
-
-[node name="Arabic-removebg-preview" type="Sprite2D" parent="."]
-position = Vector2(615, 95)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("12_cw4xt")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="VBoxContainer/Button2" method="_on_pressed"]

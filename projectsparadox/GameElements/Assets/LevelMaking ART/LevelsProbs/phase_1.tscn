@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4w052wj4lyle"]
+[gd_scene load_steps=13 format=3 uid="uid://b4w052wj4lyle"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/LevelMaking ART/LevelsProbs/phase_1.gd" id="1_c3573"]
 [ext_resource type="TileSet" uid="uid://ivkq5c5w8et2" path="res://GameElements/Assets/LevelMaking ART/LevelsProbs/phase_1.tres" id="3_yqh3y"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ckfanohmqqjvk" path="res://GameElements/Assets/Player/Player.tscn" id="7_dcix3"]
 [ext_resource type="PackedScene" uid="uid://cy4qwsyn0euh7" path="res://GameElements/Assets/Objects/ObjectsProbs/globe.tscn" id="9_8oeg2"]
 [ext_resource type="PackedScene" uid="uid://cu2sx4go4ivda" path="res://GameElements/Assets/Objects/ObjectsProbs/pot.tscn" id="10_1dn87"]
+[ext_resource type="PackedScene" uid="uid://svjm7rl1xlne" path="res://GameElements/Assets/Objects/ObjectsProbs/cage.tscn" id="10_fh6e4"]
 [ext_resource type="PackedScene" uid="uid://b0l1t2d26jn8u" path="res://GameElements/Assets/Objects/ObjectsProbs/table.tscn" id="12_loh8f"]
 
 [sub_resource type="Gradient" id="Gradient_cs22i"]
@@ -168,3 +169,7 @@ EnableDrg = true
 [node name="Table2" parent="." instance=ExtResource("12_loh8f")]
 position = Vector2(2500, -2024)
 CenterPos = Vector2(2500, -2054)
+
+[node name="Cage" parent="." instance=ExtResource("10_fh6e4")]
+position = Vector2(2402, -130)
+scale = Vector2(2, 2)

@@ -1,11 +1,12 @@
 extends Node
 
 #Tracking progress
+const Musics = [preload("res://GameElements/Assets/sounds/Music/Present_VGM.mp3"), preload("res://GameElements/Assets/sounds/Music/Past_VGM.mp3"), preload("res://GameElements/Assets/sounds/Music/Future_VGM.mp3")]
 var TimeP:int = 0
 var TimeMod: int = 1
 var TimeMod2: int = 1
 var TimeTrack: float = 0
-var MaxTime: int = 20
+var MaxTime: int = 30
 var TimeTravel:int = 0
 var TimesPositions:Array[Vector2]
 func _process(delta: float) -> void:
@@ -19,6 +20,7 @@ func _process(delta: float) -> void:
 			TimeTrack = 0
 			TimeP = randi_range(0, TimeTravel)
 			PlayerObject.position = TimesPositions[TimeP]
+			MasterAudioForthemenues._play_music(Musics[TimeP])
 		
 	
 	

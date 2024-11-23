@@ -4,7 +4,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SFX.play()
-	MasterAudioForthemenues.stop_music() # Replace with function body.
+	MasterAudioForthemenues.stop_music()
+	MasterAudioForthemenues._play_music(Global.Musics[0])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://svjm7rl1xlne"]
+[gd_scene load_steps=8 format=3 uid="uid://svjm7rl1xlne"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/Cage.gd" id="1_hw1fy"]
 [ext_resource type="Texture2D" uid="uid://be5q18dqxbx10" path="res://GameElements/Assets/ArtFiles/assets1.0 fut ure.png" id="2_gy0un"]
@@ -31,7 +31,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stvue"]
-size = Vector2(32, 26)
+size = Vector2(60, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7twax"]
+size = Vector2(32, 16)
 
 [node name="Cage" type="Node2D"]
 script = ExtResource("1_hw1fy")
@@ -43,5 +46,13 @@ animation = &"Pice"
 [node name="InteractArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(0, 5)
+visible = false
+position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_stvue")
+debug_color = Color(0.626792, 0.452571, 0.733393, 0.42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+shape = SubResource("RectangleShape2D_7twax")
