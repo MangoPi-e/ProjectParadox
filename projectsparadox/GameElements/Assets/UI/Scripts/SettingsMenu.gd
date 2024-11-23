@@ -19,7 +19,7 @@ func _ready() -> void:
 	new_style.texture = new_texture 
 	panel.add_theme_stylebox_override("panel", new_texture)
 	var timer = Timer.new()
-	timer.wait_time = 3.0  
+	timer.wait_time = 3.1  
 	add_child(timer)  
 	print("starting")
 	timer.timeout.connect(Callable(self, "_on_timer_timeout"))
@@ -57,3 +57,14 @@ func _on_timer_timeout():
 	new_style.texture = new_texture 
 	panel.add_theme_stylebox_override("panel", new_texture)
 	Global.index = num1
+	var new_timer = Timer.new()
+	new_timer.wait_time = 0.2  
+	new_timer.one_shot = true
+	add_child(new_timer)  
+	print("starting")
+	new_timer.timeout.connect(Callable(self, "_on_new_timer_timeout"))
+	new_timer.start()
+	
+func _on_new_timer_timeout():
+		Global.visible=false
+		$ShakeRect.visible=Global.visible

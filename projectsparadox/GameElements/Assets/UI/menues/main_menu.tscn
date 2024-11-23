@@ -1,13 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://c40w1ek820rfy"]
+[gd_scene load_steps=21 format=3 uid="uid://c40w1ek820rfy"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/MainMenu.gd" id="1_cr1lx"]
 [ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_u11hw"]
 [ext_resource type="FontFile" uid="uid://ceoqmhmvf4hx8" path="res://GameElements/Assets/UI/Fonts/bitsy-font-with-arabic.otf" id="2_28bab"]
-[ext_resource type="Script" path="res://GameElements/Assets/UI/menues/GoToSettings.gd" id="3_b6cfc"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/GoToSettings.gd" id="3_b6cfc"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/StartTheGame.gd" id="3_gbiqc"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/exit.gd" id="4_2sjh3"]
+[ext_resource type="AudioStream" uid="uid://c86xnxfb42ayr" path="res://GameElements/Assets/sounds/SFX/click-buttons-ui-menu-sounds-effects-button-7-203601.mp3" id="4_yi2lb"]
 [ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="4_yyd6l"]
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/shake_rect.gd" id="5_fjejj"]
 [ext_resource type="Texture2D" uid="uid://dbrmpq0bdeydj" path="res://GameElements/Assets/UI/PlayerAnimation/alphacharachter-Sheet.png" id="7_noaj2"]
-[ext_resource type="Script" path="res://GameElements/Assets/UI/menues/Playeranimation.gd" id="8_0rxth"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/Playeranimation.gd" id="8_0rxth"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qea4s"]
 texture = ExtResource("1_u11hw")
@@ -115,6 +118,12 @@ theme_override_fonts/font = SubResource("FontVariation_r26m3")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_x2ilg")
 text = "أبدأ اللعب"
+script = ExtResource("3_gbiqc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/Button"]
+stream = ExtResource("4_yi2lb")
+volume_db = 6.559
+bus = &"SFX"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -125,6 +134,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_x2ilg")
 text = "الاعدادت"
 script = ExtResource("3_b6cfc")
 
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="VBoxContainer/Button2"]
+stream = ExtResource("4_yi2lb")
+bus = &"SFX"
+
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -132,6 +145,11 @@ theme_override_fonts/font = SubResource("FontVariation_r26m3")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_x2ilg")
 text = "الخروج"
+script = ExtResource("4_2sjh3")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="VBoxContainer/Button3"]
+stream = ExtResource("4_yi2lb")
+bus = &"SFX"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -177,4 +195,6 @@ sprite_frames = SubResource("SpriteFrames_luckf")
 frame_progress = 0.539054
 script = ExtResource("8_0rxth")
 
+[connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="VBoxContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="VBoxContainer/Button3" method="_on_pressed"]

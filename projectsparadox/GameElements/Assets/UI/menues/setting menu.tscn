@@ -1,14 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://bup8wy5x8r1uk"]
+[gd_scene load_steps=16 format=3 uid="uid://bup8wy5x8r1uk"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/SettingsMenu.gd" id="1_8ihlk"]
 [ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_ml60o"]
 [ext_resource type="FontFile" uid="uid://ceoqmhmvf4hx8" path="res://GameElements/Assets/UI/Fonts/bitsy-font-with-arabic.otf" id="2_3ma6u"]
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/Mastervolum.gd" id="3_6ktvr"]
-[ext_resource type="Script" path="res://GameElements/Assets/UI/menues/Resolution.gd" id="4_n4tvn"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/menues/musicController.gd" id="4_lo60x"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/Resolution.gd" id="4_n4tvn"]
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/mute.gd" id="4_ufmcx"]
-[ext_resource type="AudioStream" uid="uid://cjfbucmfetb8i" path="res://GameElements/Assets/sounds/mp3-juice.co - ReoNa 「ガジュマル ～Heaven in the Rain～」-Music Video-（TVアニメ「シャングリラ・フロンティア」第2クール EDテーマ）.mp3" id="5_jxdtu"]
-[ext_resource type="Script" path="res://GameElements/Assets/UI/menues/FullScreen.gd" id="5_lg1n2"]
-[ext_resource type="Script" path="res://GameElements/Assets/UI/menues/ExitFromSettings.gd" id="9_gy073"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/FullScreen.gd" id="5_lg1n2"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/ExitFromSettings.gd" id="9_gy073"]
+[ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="10_fqmmj"]
+[ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/shake_rect.gd" id="11_hty5m"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3u160"]
 texture = ExtResource("1_ml60o")
@@ -27,6 +29,14 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 shadow_size = 7
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xtax8"]
+shader = ExtResource("10_fqmmj")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 1.0
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
 
 [node name="SettingMenu" type="Control"]
 layout_mode = 3
@@ -108,13 +118,14 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 36
-text = "صوت الشخصيات"
+text = "صوت الموسيقى"
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/VBoxContainer3"]
 layout_mode = 2
 min_value = -40.0
 max_value = 10.0
 step = 10.0
+script = ExtResource("4_lo60x")
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -187,11 +198,6 @@ text = "settings menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_jxdtu")
-volume_db = -20.0
-autoplay = true
-
 [node name="Button3" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -211,6 +217,21 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_knrba")
 text = "الخروج"
 script = ExtResource("9_gy073")
+
+[node name="ShakeRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_xtax8")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.001
+anchor_top = -0.003
+anchor_right = 1.0
+anchor_bottom = 0.997
+offset_left = 0.152
+offset_top = -0.056
+offset_right = -1.0
+offset_bottom = -0.0560303
+script = ExtResource("11_hty5m")
 
 [connection signal="item_selected" from="VBoxContainer/OptionButton" to="VBoxContainer/OptionButton" method="_on_item_selected"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckButton2" to="VBoxContainer/HBoxContainer/CheckButton2" method="_on_toggled"]

@@ -20,6 +20,7 @@ config/icon="res://GameElements/icon.svg"
 Global="*res://GameElements/Global.gd"
 SoundManager="*res://GameElements/SoundManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+MasterAudioForthemenues="*res://GameElements/Assets/UI/menues/MasterAudioForthemenues.tscn"
 
 [dialogic]
 

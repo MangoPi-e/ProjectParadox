@@ -11,6 +11,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Create and configure the Timer node
+	MasterAudioForthemenues.play_music_level()
 	var timer = Timer.new()
 	timer.wait_time = 3.1 
 	add_child(timer)  
