@@ -12,7 +12,7 @@ extends Control
 func _ready() -> void:
 	# Create and configure the Timer node
 	var timer = Timer.new()
-	timer.wait_time = 3.0  
+	timer.wait_time = 3.1 
 	add_child(timer)  
 	print("starting")
 	timer.timeout.connect(Callable(self, "_on_timer_timeout"))
@@ -26,6 +26,7 @@ func _process(_delta: float) -> void:
 	
 
 func _on_timer_timeout():
+	
 	print("interd")
 	var rng = RandomNumberGenerator.new()
 	var num1 = rng.randi_range(0, 3)
@@ -40,3 +41,14 @@ func _on_timer_timeout():
 	panel.add_theme_stylebox_override("panel", new_texture)
 	Global.index = num1
 	
+	var new_timer = Timer.new()
+	new_timer.wait_time = 0.2  
+	new_timer.one_shot = true
+	add_child(new_timer)  
+	print("starting")
+	new_timer.timeout.connect(Callable(self, "_on_new_timer_timeout"))
+	new_timer.start()
+	
+func _on_new_timer_timeout():
+		Global.visible=false
+		$ShakeRect.visible=Global.visible
