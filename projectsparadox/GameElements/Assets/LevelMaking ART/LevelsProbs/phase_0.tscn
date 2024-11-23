@@ -1,9 +1,8 @@
-[gd_scene load_steps=37 format=3 uid="uid://csa6meogwx54p"]
+[gd_scene load_steps=38 format=3 uid="uid://cerrlgbvdsisx"]
 
 [ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="1_3p0n3"]
 [ext_resource type="Texture2D" uid="uid://ctlsgj5g5snql" path="res://GameElements/Assets/LevelMaking ART/World/lab_tileset_LITE/lab_tileset_LITE.png" id="2_arll6"]
 [ext_resource type="PackedScene" uid="uid://ckfanohmqqjvk" path="res://GameElements/Assets/Player/Player.tscn" id="2_mo7cx"]
-[ext_resource type="Script" path="res://GameElements/Assets/LevelMaking ART/LevelsProbs/Present.gd" id="2_poxu0"]
 [ext_resource type="Script" path="res://GameElements/Assets/LevelMaking ART/LevelsProbs/Present.gd" id="2_poxu0"]
 [ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/CameraMan.gd" id="3_nw3ym"]
 [ext_resource type="Texture2D" uid="uid://bqykftr23ruj4" path="res://GameElements/Assets/ArtFiles/Tiles Floor.png" id="3_wjh1i"]
@@ -842,3 +841,5 @@ sprite_frames = SubResource("SpriteFrames_d5bvs")
 position = Vector2(23, -150)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("17_je3r6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
