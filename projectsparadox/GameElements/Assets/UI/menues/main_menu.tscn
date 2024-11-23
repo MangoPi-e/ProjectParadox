@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c40w1ek820rfy"]
+[gd_scene load_steps=22 format=3 uid="uid://c40w1ek820rfy"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/MainMenu.gd" id="1_cr1lx"]
 [ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_u11hw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/shake_rect.gd" id="5_fjejj"]
 [ext_resource type="Texture2D" uid="uid://dbrmpq0bdeydj" path="res://GameElements/Assets/UI/PlayerAnimation/alphacharachter-Sheet.png" id="7_noaj2"]
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/Playeranimation.gd" id="8_0rxth"]
+[ext_resource type="Texture2D" uid="uid://ofwt3elh71y8" path="res://GameElements/Assets/ArtFiles/_Arabic_-removebg-preview.png" id="12_cw4xt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qea4s"]
 texture = ExtResource("1_u11hw")
@@ -89,10 +90,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -2.0
-offset_right = -1.0
-offset_bottom = -2.0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 3.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_qea4s")
@@ -139,6 +140,7 @@ text = "الخروج"
 script = ExtResource("4_2sjh3")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -186,6 +188,11 @@ script = ExtResource("8_0rxth")
 stream = ExtResource("4_yi2lb")
 volume_db = 6.559
 bus = &"SFX"
+
+[node name="Arabic-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(615, 95)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("12_cw4xt")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="VBoxContainer/Button2" method="_on_pressed"]
