@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var StateMachine = $StateMachine
 
 var MovementDir = Vector2.ZERO
-
+var LastAnim
 var ObjectsInRange: Array = []
 
 @export var Enabled: bool = true

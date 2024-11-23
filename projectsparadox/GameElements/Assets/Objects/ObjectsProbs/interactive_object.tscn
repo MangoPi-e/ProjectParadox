@@ -1,17 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw1ogxafjoroa"]
+[gd_scene load_steps=7 format=3 uid="uid://dw1ogxafjoroa"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/interactive_object.gd" id="1_o00ut"]
-[ext_resource type="Texture2D" uid="uid://dwxl2nurntrc6" path="res://GameElements/Assets/ArtFiles/assets.png" id="2_3g2ne"]
+[ext_resource type="Texture2D" uid="uid://n3hem2jngsvf" path="res://GameElements/Assets/ArtFiles/assets1.0 changed the shelves.png" id="2_8ibwh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4cmln"]
-atlas = ExtResource("2_3g2ne")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws2lp"]
+atlas = ExtResource("2_8ibwh")
 region = Rect2(16, 144, 48, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qjsri"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4cmln")
+"texture": SubResource("AtlasTexture_ws2lp")
 }],
 "loop": true,
 "name": &"default",
@@ -20,6 +20,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kud8g"]
 size = Vector2(48, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqcu8"]
+size = Vector2(48, 17)
 
 [node name="InteractiveObject" type="Node2D"]
 script = ExtResource("1_o00ut")
@@ -32,9 +35,17 @@ collision_layer = 2
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+visible = false
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_kud8g")
 debug_color = Color(0.745098, 0.427451, 0.482353, 0.0941176)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_bqcu8")
 
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

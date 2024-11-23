@@ -812,7 +812,7 @@ limit_bottom = 10000
 script = ExtResource("3_nw3ym")
 
 [node name="Player" parent="." node_paths=PackedStringArray("CameraMan") instance=ExtResource("2_mo7cx")]
-position = Vector2(-48, -1)
+position = Vector2(-109, -21)
 scale = Vector2(0.2, 0.2)
 CameraMan = NodePath("../Camera2D")
 
@@ -822,7 +822,8 @@ PositionB = Vector2(-92, -78)
 PositionA = Vector2(-65, -78)
 
 [node name="InteractiveObject" parent="." node_paths=PackedStringArray("Table", "PlayerObj") instance=ExtResource("4_x6xsb")]
-position = Vector2(3, -67)
+z_index = -5
+position = Vector2(0, -67)
 Table = NodePath("../Table")
 PlayerObj = NodePath("../Player")
 
