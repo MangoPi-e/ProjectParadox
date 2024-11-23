@@ -1,6 +1,6 @@
 extends Button
 
-@onready var SFX =$AudioStreamPlayer3
+@onready var SFX =$"../../AudioStreamPlayer"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	connect("mouse_entered", Callable(self, "_on_mouse_entered"))

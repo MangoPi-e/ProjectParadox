@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bup8wy5x8r1uk"]
+[gd_scene load_steps=18 format=3 uid="uid://bup8wy5x8r1uk"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/SettingsMenu.gd" id="1_8ihlk"]
 [ext_resource type="Texture2D" uid="uid://bqrp12x6b1yue" path="res://GameElements/Assets/UI/menues/backgrounds/caveboard.png" id="1_ml60o"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/ExitFromSettings.gd" id="9_gy073"]
 [ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="10_fqmmj"]
 [ext_resource type="Script" path="res://GameElements/Assets/UI/Scripts/shake_rect.gd" id="11_hty5m"]
+[ext_resource type="AudioStream" uid="uid://c86xnxfb42ayr" path="res://GameElements/Assets/sounds/SFX/click-buttons-ui-menu-sounds-effects-button-7-203601.mp3" id="13_c02g8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3u160"]
 texture = ExtResource("1_ml60o")
@@ -234,6 +235,11 @@ offset_top = -0.056
 offset_right = -1.0
 offset_bottom = -0.0560303
 script = ExtResource("11_hty5m")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_c02g8")
+volume_db = 6.559
+bus = &"SFX"
 
 [connection signal="item_selected" from="VBoxContainer/OptionButton" to="VBoxContainer/OptionButton" method="_on_item_selected"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckButton2" to="VBoxContainer/HBoxContainer/CheckButton2" method="_on_toggled"]

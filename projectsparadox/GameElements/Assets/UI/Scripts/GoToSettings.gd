@@ -1,6 +1,6 @@
 extends Button
 
-@onready var SFX =$AudioStreamPlayer2
+@onready var SFX =$"../../AudioStreamPlayer"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	connect("mouse_entered", Callable(self, "_on_mouse_entered"))
@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_sfx_finished() -> void:
-	get_tree().change_scene_to_file("res://GameElements/Assets/UI/menues/setting menu.tscn")
+	await get_tree().change_scene_to_file("res://GameElements/Assets/UI/menues/setting menu.tscn")
 
 func _on_pressed() -> void:
 	if SFX:

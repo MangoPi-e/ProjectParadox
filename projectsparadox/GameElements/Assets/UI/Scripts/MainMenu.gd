@@ -8,9 +8,15 @@ extends Control
 	preload("res://GameElements/Assets/UI/menues/stayles/main_menu3.tres")
 ]
 
+@onready var SFX =$AudioStreamPlayer
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Create and configure the Timer node
+	if Global.CheckIfExit:
+		SFX.play()
+		Global.CheckIfExit=false
 	MasterAudioForthemenues.play_music_level()
 	var timer = Timer.new()
 	timer.wait_time = 3.1 

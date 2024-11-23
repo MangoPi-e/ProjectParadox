@@ -10,10 +10,13 @@ extends Node
 	"720p (HD)": Vector2i(1280, 720),
 	"1080p (Full HD)": Vector2i(1920, 1080)
 }
+@onready var SFX =$AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Create and configure the Timer node
+	SFX.play()
+	Global.CheckIfExit=true
 	var new_texture = style_list[Global.index] as StyleBoxTexture
 	var new_style = StyleBoxTexture.new()
 	new_style.texture = new_texture 

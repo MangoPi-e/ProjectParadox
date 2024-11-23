@@ -120,11 +120,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_x2ilg")
 text = "أبدأ اللعب"
 script = ExtResource("3_gbiqc")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/Button"]
-stream = ExtResource("4_yi2lb")
-volume_db = 6.559
-bus = &"SFX"
-
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -134,10 +129,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_x2ilg")
 text = "الاعدادت"
 script = ExtResource("3_b6cfc")
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="VBoxContainer/Button2"]
-stream = ExtResource("4_yi2lb")
-bus = &"SFX"
-
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -146,10 +137,6 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_x2ilg")
 text = "الخروج"
 script = ExtResource("4_2sjh3")
-
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="VBoxContainer/Button3"]
-stream = ExtResource("4_yi2lb")
-bus = &"SFX"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -194,6 +181,11 @@ scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_luckf")
 frame_progress = 0.539054
 script = ExtResource("8_0rxth")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yi2lb")
+volume_db = 6.559
+bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="VBoxContainer/Button2" method="_on_pressed"]

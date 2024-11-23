@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://trxgtcygg6s1"]
+[gd_scene load_steps=23 format=3 uid="uid://trxgtcygg6s1"]
 
 [ext_resource type="Shader" path="res://GameElements/Assets/UI/Transsion/Shaders/Glitch.gdshader" id="1_3p0n3"]
 [ext_resource type="Texture2D" uid="uid://ctlsgj5g5snql" path="res://GameElements/Assets/LevelMaking ART/World/lab_tileset_LITE/lab_tileset_LITE.png" id="2_arll6"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d1b3deq236v31" path="res://GameElements/Assets/Objects/ObjectsProbs/lock.tscn" id="6_owtf6"]
 [ext_resource type="PackedScene" uid="uid://mn7dtjtrfhce" path="res://GameElements/Assets/Objects/ObjectsProbs/Shelfs.tscn" id="8_n3x20"]
 [ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/SceneChangeLocklock.gd" id="11_lvb8d"]
+[ext_resource type="AudioStream" uid="uid://c86xnxfb42ayr" path="res://GameElements/Assets/sounds/SFX/click-buttons-ui-menu-sounds-effects-button-7-203601.mp3" id="14_yqqvv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8po6j"]
 shader = ExtResource("1_3p0n3")
@@ -705,3 +706,8 @@ Keys = Array[String](["Key0"])
 
 [node name="Key" parent="." instance=ExtResource("5_kw1de")]
 position = Vector2(155, -3070)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_yqqvv")
+volume_db = 6.559
+bus = &"SFX"
