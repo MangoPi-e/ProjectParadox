@@ -31,5 +31,15 @@ shape = SubResource("CircleShape2D_bby2p")
 sprite_frames = SubResource("SpriteFrames_n1byv")
 animation = &"Key_0"
 
+[node name="Label" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -25.0
+offset_right = 1165.0
+offset_bottom = 141.0
+scale = Vector2(0.05, 0.05)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 120
+text = "امسك باستعمال الماوس"
+
 [connection signal="mouse_entered" from="InteactArea" to="." method="_on_inteact_area_mouse_entered"]
 [connection signal="mouse_exited" from="InteactArea" to="." method="_on_inteact_area_mouse_exited"]

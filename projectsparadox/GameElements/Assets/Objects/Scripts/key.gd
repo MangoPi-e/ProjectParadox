@@ -11,19 +11,21 @@ class_name Key
 @onready var Anim = $AnimSprite
 var MouseInRange:bool = false
 var FollowMouse:bool = false
-
+@onready var Text = $Label
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Anim.play(ID)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	print(FollowMouse, MouseInRange, Enabled, Interactable)
 	if Enabled and MouseInRange:
 		if FollowMouse:
 			position = get_global_mouse_position()
 		if Collectable:
 			Collect()
 		elif Interactable and Input.is_action_just_pressed("Interact"):
+			Text.visible = false
 			Hold()
 	
 

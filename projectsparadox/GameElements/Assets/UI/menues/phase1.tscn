@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyr2s6gyk0arp"]
+
+[ext_resource type="Script" path="res://GameElements/Assets/UI/menues/phase_1.gd" id="1_x48iu"]
+
+[node name="Phase1" type="AudioStreamPlayer"]
+script = ExtResource("1_x48iu")

@@ -1,20 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1b3deq236v31"]
+[gd_scene load_steps=5 format=3 uid="uid://d1b3deq236v31"]
 
 [ext_resource type="Script" path="res://GameElements/Assets/Objects/Scripts/Lock.gd" id="1_av2u6"]
-[ext_resource type="Texture2D" uid="uid://c747en25p82a" path="res://GameElements/Assets/ArtFiles/TIMEMACHINE2.png" id="2_vmeih"]
+[ext_resource type="Texture2D" uid="uid://duxwmo2sf650o" path="res://GameElements/Assets/ArtFiles/TIMEMACHINE1.png" id="2_7kohd"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ko70f"]
-radius = 17.0294
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dqra6"]
-atlas = ExtResource("2_vmeih")
-region = Rect2(16, 21, 31, 23)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cf8u3"]
+size = Vector2(35, 21)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cypyt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dqra6")
+"texture": ExtResource("2_7kohd")
 }],
 "loop": true,
 "name": &"Lock_0",
@@ -30,9 +26,11 @@ collision_layer = 32
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AddingArea"]
-shape = SubResource("CircleShape2D_ko70f")
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_cf8u3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.62, 0.62)
 sprite_frames = SubResource("SpriteFrames_cypyt")
 animation = &"Lock_0"
 

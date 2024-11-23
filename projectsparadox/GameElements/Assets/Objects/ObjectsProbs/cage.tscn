@@ -37,6 +37,7 @@ size = Vector2(60, 31)
 size = Vector2(32, 16)
 
 [node name="Cage" type="Node2D"]
+z_index = -1
 script = ExtResource("1_hw1fy")
 
 [node name="AnimSprite" type="AnimatedSprite2D" parent="."]

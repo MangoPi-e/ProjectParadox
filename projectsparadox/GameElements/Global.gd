@@ -9,7 +9,10 @@ var TimeTrack: float = 0
 var MaxTime: int = 30
 var TimeTravel:int = 0
 var TimesPositions:Array[Vector2]
+var FirstTimePresent = true
 func _process(delta: float) -> void:
+	if "Fu" in Inventory and "ture" in Inventory:
+		change_the_scene("res://GameElements/Assets/UI/menues/main_menu.tscn")
 	if TimeTravel > 0:
 		TimeTrack += delta * TimeMod
 		if TimeTrack >= 0.5:
@@ -19,8 +22,11 @@ func _process(delta: float) -> void:
 		if TimeTrack >= MaxTime:
 			TimeTrack = 0
 			TimeP = randi_range(0, TimeTravel)
+			if TimeP == 0 and FirstTimePresent:
+				Dialogic.start_timeline("timeline5")
 			PlayerObject.position = TimesPositions[TimeP]
-			MasterAudioForthemenues._play_music(Musics[TimeP])
+			Phase1.stop_music()
+			Phase1._play_music(Musics[TimeP])
 		
 	
 	

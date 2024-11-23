@@ -59,9 +59,11 @@ func pause():
 	$AnimationPlayer.play("pause menu")
 	
 func testEsc():
-	if Input.is_action_just_pressed("esc") and !get_tree().paused :
+	if Input.is_action_just_pressed("esc") and !get_tree().paused:
+		visible = true
 		pause()
-	elif Input.is_action_just_pressed("esc") and get_tree().paused :
+	elif Input.is_action_just_pressed("esc") and get_tree().paused:
+		visible = false
 		resume()
 	
 

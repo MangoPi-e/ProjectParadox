@@ -19,6 +19,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if MouseIn and "Key1" in Global.Inventory:
+		move_drg()
 	if Enabled and Input.is_action_pressed("Puse"):
 		CameraMan.FollowThePlayer = true
 		Global.enable_player()

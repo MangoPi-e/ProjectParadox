@@ -2,7 +2,7 @@ extends Node2D
 
 var CameraMan:Camera2D
 var PlayerInRange:bool
-
+@onready var Text = $Label
 @export_category("Data")
 
 @export_category("Modes")
@@ -21,6 +21,7 @@ func _process(_delta: float) -> void:
 
 func activate_sequance(GoodToGo):
 	if PlayerInRange and GoodToGo:
+		Text.visible = false
 		Global.disable_player()
 		Global.enable_table(Table)
 		CameraMan.position = Table.CenterPos

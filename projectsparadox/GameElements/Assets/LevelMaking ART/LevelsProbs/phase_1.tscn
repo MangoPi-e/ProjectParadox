@@ -141,24 +141,24 @@ texture_scale = 10.91
 [node name="Globe" parent="." node_paths=PackedStringArray("OtherGlobe") instance=ExtResource("9_8oeg2")]
 position = Vector2(301, -166)
 scale = Vector2(2, 2)
-Mode = 1
+Mode = 2
 OtherGlobe = NodePath("../Globe2")
 
 [node name="Globe2" parent="." node_paths=PackedStringArray("OtherGlobe") instance=ExtResource("9_8oeg2")]
 position = Vector2(2802, -165)
 scale = Vector2(2, 2)
-Mode = 2
+Mode = 1
 OtherGlobe = NodePath("../Globe")
 
 [node name="Pot" parent="." node_paths=PackedStringArray("OtherPot") instance=ExtResource("10_1dn87")]
 position = Vector2(321, 94)
 scale = Vector2(2, 2)
-Mode = 1
 OtherPot = NodePath("../Pot2")
 
 [node name="Pot2" parent="." node_paths=PackedStringArray("OtherPot") instance=ExtResource("10_1dn87")]
 position = Vector2(2814, 94)
 scale = Vector2(2, 2)
+Mode = 1
 OtherPot = NodePath("../Pot")
 
 [node name="Table" parent="." instance=ExtResource("12_loh8f")]

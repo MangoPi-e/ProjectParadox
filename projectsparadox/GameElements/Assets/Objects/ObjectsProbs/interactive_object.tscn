@@ -47,5 +47,15 @@ visible = false
 position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_bqcu8")
 
+[node name="Label" type="Label" parent="."]
+offset_left = -24.0
+offset_top = -25.0
+offset_right = 1605.0
+offset_bottom = 141.0
+scale = Vector2(0.03, 0.03)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 120
+text = "أضغط بالفأرة مع الاقتراب للتفاعل"
+
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
